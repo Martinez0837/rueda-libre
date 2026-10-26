@@ -7,12 +7,10 @@ request:GET
 code:304
 GET /promociones.html
     -code:404
-
-
+    
 html: Hara la estructura base de la pagina web
-css: Hara la pagina web mas atractiva visualmente
+css:Hara la pagina web mas atractiva visualmente
 javascript: Hara la pagina web mas interactiva con el usuario
-
 
 rutas
 origen | Destino | Ruta escrita
