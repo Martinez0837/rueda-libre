@@ -8,8 +8,104 @@ code:304
 GET /promociones.html
     -code:404
 html:
-Hara la estructura base de la pagina web.
+Hara la estructura base de la pagina web
 css:
-Hara la pagina web mas atractiva visualmente.
+Hara la pagina web mas atractiva visualmente
 javascript
-Hara la pagina web mas interactiva con los usuarios.
+Hara la pagina web mas interactiva con el usuario
+
+
+
+rutas
+origen | Destino | Ruta escrita
+index.html | Tarifas | paginas/tarifas.html
+index.html | Sección de tarifas de bicicletas | paginas/tarifas.html#tarifas-bicicletas
+index.html | Reservas | paginas/reserva.html
+index.html | Imagen de bicicleta | img/bicicleta.jpg
+index.html | Imagen de ruta | img/ruta.jpg
+index.html | Sección "Encuéntranos" (ancla) | #find-us
+index.html | Google Maps | https://maps.app.goo.gl/ooEiGXqQgTfTZhTu9
+index.html | Correo de contacto | mailto:info@ruedalibre.com
+paginas/reservas.html | Inicio | ../index.html
+paginas/reservas.html | Tarifas | tarifas.html
+paginas/reservas.html | Correo de contacto | mailto:info@ruedalibre.com
+paginas/tarifas.html | Inicio | ../index.html
+paginas/tarifas.html | Reservas | reserva.html
+paginas/tarifas.html | Reservar ahora | reserva.html
+paginas/tarifas.html | Correo de contacto | mailto:info@ruedalibre.com
+
+
+ <style>
+        img {
+            max-width: 350px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>Inicio</li>
+            <li><a href="paginas/tarifas.html">Tarifas</a></li>
+            <li><a href="paginas/reserva.html">Reservas</a></li>
+        </ul>
+    </nav>
+    <header>
+            <main>
+       
+        <section id="about-us">
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos un servicio de alquiler de bicicletas que te invita a descubrir Medellín sobre dos ruedas.</p>
+        </section>
+
+        <section id="services">
+            <h2>Nuestros servicios</h2>
+
+            <article id="bike-rental">
+                <h3>Alquiler de bicicletas</h3>
+                <img src="img/bicicleta.jpg" alt="Bicicleta negro/rojo disponible para alquilar">
+                <p>Alquila una bicicleta para recorrer Medellín a tu ritmo. <strong>Recuerda usar las protecciones, las técnicas y asegurar la bicicleta con candado</strong> para disfrutar el paseo con mayor tranquilidad.</p>
+                <button><a href="paginas/tarifas.html#tarifas-bicicletas">Ver tarifas</a></button>
+            </article>
+
+            <article id="guided-tours">
+                <h3>Rutas guiadas</h3>
+                <img src="img/ruta.jpg" alt="Mapa con rutas para recorrer en bicicleta">
+                <p>Únete a nuestras rutas guiadas para descubrir los mejores lugares de Medellín. Es una forma <em>divertida de conocer la ciudad sobre ruedas</em>.</p>
+            </article>
+
+            <article id="basic-workshop">
+                <h3>Taller básico</h3>
+                <p>Contamos con un taller básico para el mantenimiento de tu bicicleta y asesoramiento técnico.</p>
+            </article>
+        </section>
+
+        <section id="how-to-rent">
+            <h2>¿Cómo alquilar?</h2>
+            <ol>
+                <li>Selecciona la bicicleta que deseas alquilar.</li>
+                <li>Elige la duración del alquiler.</li>
+                <li>Proporciona tus datos y realiza el pago.</li>
+                <li>Recoge tu bicicleta y disfruta de tu paseo.</li>
+            </ol>
+        </section>
+
+        <section id="find-us">
+            <h2>Encuéntranos</h2>
+            <p>Estamos en Medellín. ¡Visítanos y comienza tu recorrido!</p>
+        </section>
+        <a name="map" href="https://maps.app.goo.gl/ooEiGXqQgTfTZhTu9">
+            <h2>Ven y visitanos</h2>
+        </a>
+        <a name="email" href="mailto:info@ruedalibre.com">
+            <h2>Envíanos un correo</h2>
+        </a>
+    </main>
+    <footer>
+        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados. Riwi.</p>
+        <dl>
+            <dt>Contacto:</dt>
+            <dd><a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></dd>
+        </dl>
+    </footer>
