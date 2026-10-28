@@ -130,7 +130,7 @@ Uso propuesto para aplicar con CSS:
 - No usar texto blanco sobre Naranja Pedal ni texto Naranja Pedal sobre Crema;
   esos pares no alcanzan 3:1 y el naranja debe quedar como superficie decorativa
   o acompañarse de texto Azul Noche.
-- Este mapa documenta combinaciones; no se cambió todavía la paleta visual actual.
+- Los colores de esta guía ya están aplicados en la presentación visual del sitio.
 
 Publicación de GitHub Pages:
 - URL pública de Rueda Libre v0.2: pendiente. No se publica ni se inventa una URL:
@@ -140,3 +140,62 @@ Publicación de GitHub Pages:
 - Después de publicar desde la rama principal, añadir aquí la URL pública y
   agregarla a la descripción del repositorio. La comprobación de enlaces e
   imágenes en las páginas públicas queda pendiente hasta disponer de esa URL.
+
+Identidad visual y tipografía (2026-10-27)
+- Las tres páginas cargan Montserrat 700 y Open Sans 400/600 desde Google Fonts,
+  con conexiones preestablecidas y CSS externo en css/styles.css.
+- La hoja usa variables globales para los colores de marca, respaldo de fuentes
+  y escala de espaciado. El fondo general y la tipografía base se aplican en body;
+  encabezados usan un solo selector agrupado.
+- Mapa aplicado: fondo Crema, texto principal Azul Noche, texto secundario Gris
+  Asfalto; botones/enlaces principales Verde Ruta con texto blanco; superficies
+  destacadas Naranja Pedal con texto Azul Noche. No se usa blanco sobre naranja.
+- Revisión en DevTools (Computed): en el primer párrafo del contenido de cada
+  página, font-family Open Sans (con Arial/sans-serif de respaldo) coincide con
+  la del body, por lo que se hereda. background-color no se hereda: el párrafo
+  conserva fondo transparente (rgba(0, 0, 0, 0)) mientras el body muestra Crema
+  (rgb(250, 246, 239)). Los h1 computan Montserrat, peso 700.
+- Verificación en navegador (2026-10-28): las tres páginas cargaron la hoja CSS
+  externa y Google Fonts antes que ella; Network registró los recursos de
+  Montserrat y Open Sans. Computed mostró Open Sans en body y párrafos, Montserrat
+  700 en h1, y document.fonts confirmó disponibles Open Sans 400/600 y Montserrat
+  700 en las tres páginas.
+
+Estados de navegación, enlaces y foco (2026-10-27)
+- Se asignó id="menu" a la lista de navegación de las tres páginas, y el enlace
+  actual lleva class="activo" y aria-current="page". El estado activo combina
+  fondo Naranja Pedal con texto Azul Noche (7.2:1); el menú normal es Verde Ruta
+  con texto blanco (5.31:1). Los enlaces inactivos usan Azul Noche/blanco al
+  pasar el puntero o recibir foco; el activo conserva su combinación naranja/
+  azul para seguir identificando la página, y responde con subrayado y elevación.
+- Diagnóstico de cascada (reglas y especificidad CSS):
+  #navbar .navbar-links a tiene especificidad (1,1,1) —un ID, una clase y un
+  elemento—. La regla solicitada #menu a tiene (1,0,1), así que su color Gris
+  Asfalto queda tachado por la regla del menú. .activo tiene (0,1,0), menor
+  especificidad que ambas reglas, por lo que su color Verde Ruta también aparece
+  tachado y no distingue el enlace activo.
+- Corrección de cascada: #menu a.activo tiene (1,1,1), iguala la regla existente
+  del menú y, al declararse después, gana el empate por orden de origen. Define
+  fondo naranja y texto Azul Noche. Se conservan las reglas de práctica #menu a
+  y .activo sin !important ni estilos en línea.
+- Se creó .boton-reservar para llamadas a la acción «Reservar ahora», con Verde
+  Ruta/blanco en reposo y Azul Noche/blanco en hover y focus. Sus combinaciones
+  aprobadas alcanzan 5.31:1 y 15.97:1. Hover y focus también subrayan y elevan el
+  control para que el cambio no dependa únicamente del color.
+- Enlaces, botones y campos muestran contorno Azul Noche de 3 px al recibir
+  :focus. Hover subraya enlaces, oscurece botones y menú, y cambia el borde de
+  los campos; los botones de opción y casillas muestran un contorno Gris Asfalto.
+  Los campos con foco también cambian borde y sombra. Se conserva un indicador
+  explícito incluso para el selector de fecha nativo; no se deja el outline:none
+  de la regla base sin reemplazo.
+- Con Tab se recorrieron los enlaces del menú en las tres páginas, además de
+  enlaces de acción en Inicio y Tarifas; Shift+Tab regresó al enlace anterior.
+  En Reservas, Tab avanzó en orden desde el menú hasta nombre, documento, correo,
+  celular y fecha. La automatización del navegador no avanzó más allá del control
+  nativo de fecha, así que el resto del recorrido debe confirmarse manualmente.
+  Aparte, se enfocaron individualmente todos los enlaces y controles de las tres
+  páginas y cada uno mostró el indicador previsto.
+- La interacción hover se comprobó moviendo el puntero sobre los enlaces y
+  botones y leyendo sus estilos computados en el navegador. No se manipuló el
+  panel DevTools :hov; la causa de cascada se documentó mediante el cálculo de
+  especificidad de las reglas.

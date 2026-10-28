@@ -1,31 +1,70 @@
+:root {
+  --verde-ruta: #1e7a4f;
+  --naranja-pedal: #f39a2b;
+  --azul-noche: #14213d;
+  --crema: #faf6ef;
+  --gris-asfalto: #5b6470;
+  --blanco: #ffffff;
+
+  --fuente-titulos: "Montserrat", Arial, sans-serif;
+  --fuente-texto: "Open Sans", Arial, sans-serif;
+
+  --espaciado-xs: 0.5rem;
+  --espaciado-sm: 0.75rem;
+  --espaciado-md: 1rem;
+  --espaciado-lg: 1.5rem;
+  --espaciado-xl: 2rem;
+
+  --borde-suave: rgba(91, 100, 112, 0.25);
+  --sombra-color: rgba(20, 33, 61, 0.12);
+}
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+  }
+
+  strong,
+  b,
+  th,
+  dt {
+    font-weight: 600;
+  }
+
   .horario-atencion {
     margin-top: 20px;
     padding: 14px 16px;
-    border: 1px solid #dce3ec;
+    border: 1px solid var(--borde-suave);
     border-radius: 12px;
-    background-color: #f5f8fc;
+    background-color: var(--crema);
     text-align: center;
   }
 
   .horario-atencion h2 {
     margin-bottom: 6px;
-    color: #243b53;
+    color: var(--azul-noche);
     font-size: 1rem;
   }
 
   .horario-atencion p {
-    color: #536273;
+    color: var(--gris-asfalto);
   }
 
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #202a36;
+    font-family: var(--fuente-texto);
+    color: var(--azul-noche);
+    background-color: var(--crema);
   }
 
   /* Reserva */
@@ -35,16 +74,16 @@
     display: grid;
     place-items: center;
     padding: 24px;
-    background: radial-gradient(circle at 15% 15%, #d8f3ef 0, transparent 34%), linear-gradient(135deg, #edf5ff, #f5f1ff);
+    background-color: var(--crema);
   }
 
   .isla {
     width: min(100%, 460px);
     padding: 38px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--crema);
     border-radius: 28px;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 24px 70px rgba(48, 72, 110, 0.16);
+    background: var(--crema);
+    box-shadow: 0 24px 70px var(--sombra-color);
     backdrop-filter: blur(12px);
   }
 
@@ -56,7 +95,7 @@
 
   .intro {
     margin: 10px 0 26px;
-    color: #687586;
+    color: var(--gris-asfalto);
     line-height: 1.55;
   }
 
@@ -72,7 +111,7 @@
   .ayuda-campo {
     display: block;
     margin-top: 6px;
-    color: #687586;
+    color: var(--gris-asfalto);
     font-size: 0.8rem;
     line-height: 1.4;
   }
@@ -86,7 +125,7 @@
 
   .grupo-reserva legend {
     margin-bottom: 12px;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .formulario-reserva h2 {
@@ -98,7 +137,7 @@
     display: block;
     margin-bottom: 8px;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .opciones-reserva {
@@ -119,7 +158,7 @@
     display: block;
     margin-bottom: 8px;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   input:not([type="radio"]):not([type="checkbox"]),
@@ -128,13 +167,25 @@
     width: 100%;
     min-height: 50px;
     padding: 12px 15px;
-    border: 1px solid #dce3ec;
+    border: 1px solid var(--borde-suave);
     border-radius: 13px;
     outline: none;
-    background: #fbfcfe;
+    background: var(--crema);
     color: inherit;
     font: inherit;
     transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]):hover,
+  select:hover,
+  textarea:hover {
+    border-color: var(--gris-asfalto);
+  }
+
+  .opcion-reserva input[type="radio"]:hover,
+  .opcion-reserva input[type="checkbox"]:hover {
+    outline: 2px solid var(--gris-asfalto);
+    outline-offset: 2px;
   }
 
   .opcion-reserva input[type="radio"],
@@ -142,7 +193,7 @@
     width: auto;
     min-height: 0;
     margin: 0;
-    accent-color: #31536f;
+    accent-color: var(--verde-ruta);
   }
 
   textarea {
@@ -150,15 +201,17 @@
     resize: vertical;
   }
 
-  input:focus,
+  input:not([type="radio"]):not([type="checkbox"]):focus,
   select:focus,
   textarea:focus {
-    border-color: #14213d;
-    box-shadow: 0 0 0 4px rgba(20, 33, 61, 0.14);
+    border-color: var(--azul-noche);
+    box-shadow: 0 0 0 4px var(--sombra-color);
+    outline: 3px solid var(--azul-noche);
+    outline-offset: 3px;
   }
 
   .formulario-reserva button:focus-visible {
-    outline: 3px solid #14213d;
+    outline: 3px solid var(--azul-noche);
     outline-offset: 3px;
   }
 
@@ -168,23 +221,23 @@
     margin-top: 6px;
     border: 0;
     border-radius: 14px;
-    background: #243b53;
-    color: #ffffff;
+    background: var(--verde-ruta);
+    color: var(--blanco);
     font: inherit;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: transform 160ms ease, background 160ms ease;
   }
 
   button:hover {
-    background: #31536f;
+    background: var(--azul-noche);
     transform: translateY(-1px);
 
   }
 
   .nota {
     margin: 16px 0 0;
-    color: #7a8795;
+    color: var(--gris-asfalto);
     font-size: 0.78rem;
     line-height: 1.5;
     text-align: center;
@@ -205,7 +258,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: var(--espaciado-lg);
     width: 100%;
     margin: 0;
     padding: 0;
@@ -214,12 +267,10 @@
   nav {
     margin: 12px clamp(16px, 4vw, 40px);
     padding: 12px clamp(16px, 3vw, 32px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--crema);
     border-radius: 20px;
-    background:
-      radial-gradient(circle at 12% 20%, rgba(216, 243, 239, 0.9), transparent 42%),
-      linear-gradient(120deg, #edf5ff, #f5f1ff);
-    box-shadow: 0 12px 32px rgba(48, 72, 110, 0.12);
+    background-color: var(--crema);
+    box-shadow: 0 12px 32px var(--sombra-color);
     backdrop-filter: blur(12px);
   }
 
@@ -245,7 +296,7 @@
 
   #navbar .nombre-marca {
     margin: 0;
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(1.4rem, 3.5vw, 2rem);
   }
 
@@ -264,25 +315,61 @@
   #navbar .navbar-links a {
     display: inline-block;
     padding: 10px 14px;
-    border: 1px solid #243b53;
+    border: 1px solid var(--verde-ruta);
     border-radius: 8px;
-    background-color: #243b53;
-    color: #ffffff;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
     text-decoration: none;
     transition: background-color 160ms ease, transform 160ms ease;
   }
 
   #navbar .navbar-links a:hover {
-    background-color: #31536f;
+    background-color: var(--azul-noche);
     transform: translateY(-2px);
   }
 
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible,
-  textarea:focus-visible {
-    outline: 3px solid #14213d;
+  #menu a {
+    color: var(--gris-asfalto);
+  }
+
+  .activo {
+    color: var(--verde-ruta);
+    font-weight: 600;
+  }
+
+  #menu a.activo {
+    border-color: var(--naranja-pedal);
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+  }
+
+  #menu a:hover,
+  #menu a:focus {
+    background-color: var(--azul-noche);
+    color: var(--blanco);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transform: translateY(-2px);
+  }
+
+  #menu a.activo:hover,
+  #menu a.activo:focus {
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+  }
+
+  a:not(.marca):hover {
+    text-decoration-thickness: 2px;
+  }
+
+  a:focus,
+  button:focus,
+  input:not([type="radio"]):not([type="checkbox"]):focus,
+  .opcion-reserva input[type="radio"]:focus,
+  .opcion-reserva input[type="checkbox"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: 3px solid var(--azul-noche);
     outline-offset: 3px;
   }
 
@@ -295,25 +382,25 @@
     width: min(100% - 32px, 1080px);
     margin: 28px auto 20px;
     padding: 28px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--crema);
     border-radius: 20px;
-    background: linear-gradient(120deg, #ffffff, #edf5ff 58%, #f5f1ff);
-    box-shadow: 0 12px 32px rgba(48, 72, 110, 0.08);
-    color: #243b53;
+    background: linear-gradient(120deg, var(--crema), var(--naranja-pedal));
+    box-shadow: 0 12px 32px var(--sombra-color);
+    color: var(--azul-noche);
     font-size: clamp(1.3rem, 3vw, 1.8rem);
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
   }
 
   .bienvenida h1 {
-    color: #243b53;
+    color: var(--azul-noche);
     font-size: inherit;
   }
 
   .bienvenida p {
     display: block;
     margin-top: 8px;
-    color: #687586;
+    color: var(--azul-noche);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
@@ -321,7 +408,7 @@
 
   .contenido-inicio {
     display: grid;
-    gap: 20px;
+    gap: var(--espaciado-lg);
     width: min(100% - 32px, 1080px);
     margin: 0 auto;
   }
@@ -330,23 +417,41 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(210px, 1fr));
     align-items: stretch;
-    gap: 16px;
+    gap: var(--espaciado-md);
     overflow-x: auto;
     padding-bottom: 12px;
   }
 
   .contenido-card {
     padding: clamp(20px, 4vw, 32px);
-    border: 1px solid #e1e8f0;
+    border: 1px solid var(--borde-suave);
     border-radius: 18px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 28px rgba(32, 42, 54, 0.07);
+    background-color: var(--crema);
+    box-shadow: 0 10px 28px var(--sombra-color);
   }
 
   .contenido-card h2 {
     margin-bottom: 16px;
-    color: #243b53;
+    color: var(--azul-noche);
     text-align: center;
+  }
+
+  .servicios-intro {
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+  }
+
+  .servicios-intro h2,
+  .servicios-intro p {
+    color: var(--azul-noche);
+  }
+
+  .otros-servicios {
+    background-color: var(--verde-ruta);
+  }
+
+  .otros-servicios > h2 {
+    color: var(--blanco);
   }
 
   #about-us,
@@ -360,7 +465,7 @@
   .ubicacion-card > p {
     max-width: 760px;
     margin: 0 auto;
-    color: #536273;
+    color: var(--gris-asfalto);
     line-height: 1.75;
     text-align: center;
   }
@@ -369,33 +474,33 @@
     align-self: center;
     margin-top: 16px;
     padding: 10px 16px;
-    border: 1px solid #243b53;
+    border: 1px solid var(--verde-ruta);
     border-radius: 8px;
-    background-color: #243b53;
-    color: #ffffff;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
     text-align: center;
     text-decoration: none;
     transition: background-color 160ms ease, transform 160ms ease;
   }
 
   .boton-encuentranos:hover {
-    background-color: #31536f;
+    background-color: var(--verde-ruta);
     transform: translateY(-2px);
   }
 
   .boton-encuentranos:focus-visible {
-    outline: 3px solid #14213d;
+    outline: 3px solid var(--azul-noche);
     outline-offset: 3px;
   }
 
   .contenido-inicio a {
-    color: #276c68;
-    font-weight: 700;
+    color: var(--verde-ruta);
+    font-weight: 600;
     text-underline-offset: 3px;
   }
 
   .servicios-intro {
-    color: #687586;
+    color: var(--azul-noche);
     text-align: center;
   }
 
@@ -412,16 +517,53 @@
     align-self: center;
     padding: 10px 16px;
     border-radius: 8px;
-    background-color: #243b53;
-    color: #ffffff;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
     text-align: center;
     text-decoration: none;
     transition: background-color 160ms ease, transform 160ms ease;
   }
 
   .servicios-intro > a:hover {
-    background-color: #31536f;
+    background-color: var(--azul-noche);
     transform: translateY(-2px);
+  }
+
+  .boton-reservar {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 2px solid var(--verde-ruta);
+    border-radius: 8px;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-underline-offset: 3px;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .contenido-inicio a.boton-reservar {
+    color: var(--blanco);
+  }
+
+  .boton-reservar:hover,
+  .boton-reservar:focus {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+    color: var(--blanco);
+    text-decoration: underline;
+    transform: translateY(-2px);
+  }
+
+  .boton-reservar:focus {
+    outline: 3px solid var(--azul-noche);
+    outline-offset: 3px;
+  }
+
+  .accion-reserva {
+    margin: 20px 0;
+    text-align: center;
   }
 
   .alquiler-card > img {
@@ -434,7 +576,7 @@
   }
 
   .alquiler-card > p {
-    color: #536273;
+    color: var(--gris-asfalto);
     line-height: 1.65;
     text-align: center;
   }
@@ -457,9 +599,9 @@
 
   .servicio-card {
     overflow: hidden;
-    border: 1px solid #e1e8f0;
+    border: 1px solid var(--borde-suave);
     border-radius: 14px;
-    background-color: #f8fafc;
+    background-color: var(--crema);
   }
 
   .servicio-card > img {
@@ -475,11 +617,11 @@
 
   .servicio-contenido h3 {
     margin-bottom: 10px;
-    color: #243b53;
+    color: var(--azul-noche);
   }
 
   .servicio-contenido p {
-    color: #536273;
+    color: var(--gris-asfalto);
     line-height: 1.65;
   }
 
@@ -487,22 +629,22 @@
     display: inline-block;
     margin-top: 14px;
     padding: 10px 16px;
-    border: 1px solid #243b53;
+    border: 1px solid var(--verde-ruta);
     border-radius: 8px;
-    background-color: #243b53;
-    color: #ffffff !important;
+    background-color: var(--azul-noche);
+    color: var(--blanco);
     text-align: center;
     text-decoration: none;
     transition: background-color 160ms ease, transform 160ms ease;
   }
 
   .boton-rutas:hover {
-    background-color: #31536f;
+    background-color: var(--azul-noche);
     transform: translateY(-2px);
   }
 
   .boton-rutas:focus-visible {
-    outline: 3px solid #14213d;
+    outline: 3px solid var(--azul-noche);
     outline-offset: 3px;
   }
 
@@ -525,8 +667,8 @@
     min-height: 64px;
     padding: 16px 16px 16px 54px;
     border-radius: 12px;
-    background-color: #f5f8fc;
-    color: #536273;
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
     line-height: 1.5;
     counter-increment: pasos;
   }
@@ -540,10 +682,10 @@
     height: 26px;
     place-items: center;
     border-radius: 50%;
-    background-color: #d8f3ef;
-    color: #243b53;
+    background-color: var(--crema);
+    color: var(--azul-noche);
     content: counter(pasos);
-    font-weight: 700;
+    font-weight: 600;
     transform: translateY(-50%);
   }
 
@@ -563,10 +705,10 @@
     gap: 16px;
     margin: 32px 0 16px;
     padding: 20px 24px;
-    border: 1px solid #dce3ec;
+    border: 1px solid var(--borde-suave);
     border-radius: 14px;
-    background-color: #f5f8fc;
-    box-shadow: 0 8px 24px rgba(32, 42, 54, 0.08);
+    background-color: var(--crema);
+    box-shadow: 0 8px 24px var(--sombra-color);
   }
 
   .fondo ~ .pie-contacto {
@@ -580,7 +722,7 @@
   }
 
   .pie-contacto p {
-    color: #687586;
+    color: var(--gris-asfalto);
     text-align: right;
   }
 
@@ -622,6 +764,13 @@
     }
   }
 
+  @media (max-width: 700px) {
+    .presentacion-grid {
+      grid-template-columns: minmax(0, 1fr);
+      overflow-x: visible;
+    }
+  }
+
 /* Tarifas */
 .pagina-tarifas {
   padding: 0 clamp(16px, 4vw, 40px);
@@ -634,17 +783,16 @@
   gap: 16px;
   margin: 24px 0;
   padding: 24px clamp(18px, 4vw, 36px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--crema);
   border-radius: 20px;
-  background:
-    radial-gradient(circle at 12% 20%, rgba(216, 243, 239, 0.9), transparent 42%),
-    linear-gradient(120deg, #edf5ff, #f5f1ff);
-  box-shadow: 0 12px 32px rgba(48, 72, 110, 0.12);
+  background-color: var(--naranja-pedal);
+  box-shadow: 0 12px 32px var(--sombra-color);
 }
 
 .encabezado-tarifas h1 {
   flex: 1;
   margin: 0;
+  color: var(--azul-noche);
   font-size: clamp(1.25rem, 3.5vw, 2rem);
   text-align: left;
 }
@@ -664,10 +812,10 @@
 .tarifa-card {
   min-width: 0;
   padding: 16px;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--borde-suave);
   border-radius: 16px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(32, 42, 54, 0.1);
+  background-color: var(--crema);
+  box-shadow: 0 8px 24px var(--sombra-color);
 }
 
 .tarifa-card h2 {
@@ -688,12 +836,12 @@
 .tarifa-card th,
 .tarifa-card td {
   padding: 8px;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--borde-suave);
   text-align: left;
 }
 
 .tarifa-card th {
-  background-color: #edf5ff;
+  background-color: var(--crema);
 }
 
 .categoria-bicicletas {
@@ -701,10 +849,10 @@
   max-width: 1100px;
   margin: 24px auto;
   padding: 16px;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--borde-suave);
   border-radius: 16px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(32, 42, 54, 0.1);
+  background-color: var(--crema);
+  box-shadow: 0 8px 24px var(--sombra-color);
 }
 
 .categoria-bicicletas h2 {
@@ -728,8 +876,8 @@
   overflow: hidden;
   margin: 0;
   border-radius: 12px;
-  background-color: #f5f8fc;
-  box-shadow: 0 4px 16px rgba(32, 42, 54, 0.1);
+  background-color: var(--crema);
+  box-shadow: 0 4px 16px var(--sombra-color);
 }
 
 .bicicleta-card img {
@@ -737,7 +885,7 @@
   width: 100%;
   height: 240px;
   object-fit: contain;
-  background-color: #ffffff;
+  background-color: var(--crema);
 }
 
 @media (max-width: 700px) {
@@ -755,9 +903,10 @@
 .aviso-recorridos {
   margin: 16px 0 24px;
   padding: 12px 16px;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--borde-suave);
   border-radius: 10px;
-  background-color: #f5f8fc;
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
   line-height: 1.5;
   text-align: center;
 }
@@ -776,22 +925,22 @@
   display: inline-block;
   flex-shrink: 0;
   padding: 10px 16px;
-  border: 1px solid #243b53;
+  border: 1px solid var(--verde-ruta);
   border-radius: 8px;
-  background-color: #243b53;
-  color: #ffffff;
+  background-color: var(--verde-ruta);
+  color: var(--blanco);
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 160ms ease, transform 160ms ease;
 }
 
 .boton-inicio:hover {
-  background-color: #31536f;
+  background-color: var(--azul-noche);
   transform: translateY(-2px);
 }
 
 .boton-inicio:focus-visible {
-  outline: 3px solid #14213d;
+  outline: 3px solid var(--azul-noche);
   outline-offset: 3px;
 }
 
@@ -807,10 +956,10 @@
   gap: 16px;
   margin: 32px 0 16px;
   padding: 20px 24px;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--borde-suave);
   border-radius: 14px;
-  background-color: #f5f8fc;
-  box-shadow: 0 8px 24px rgba(32, 42, 54, 0.08);
+  background-color: var(--crema);
+  box-shadow: 0 8px 24px var(--sombra-color);
 }
 
 .pagina-tarifas .pie-contacto dd {
@@ -818,7 +967,7 @@
 }
 
 .pagina-tarifas .pie-contacto p {
-  color: #687586;
+  color: var(--gris-asfalto);
   text-align: right;
 }
 
