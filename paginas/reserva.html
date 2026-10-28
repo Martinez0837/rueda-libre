@@ -36,12 +36,13 @@
 
           <div class="campo">
             <label for="nombre">Nombre completo</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Andrea García López" required>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Andrea García López" minlength="3" required>
           </div>
 
           <div class="campo">
             <label for="documento">Número de documento</label>
-            <input id="documento" name="documento" type="text" autocomplete="off" required>
+            <input id="documento" name="documento" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{6,10}" title="Ingresa solo números: entre 6 y 10 dígitos." aria-describedby="ayuda-documento" required>
+            <small class="ayuda-campo" id="ayuda-documento">Solo números, entre 6 y 10 dígitos.</small>
           </div>
 
           <div class="campo">
@@ -51,7 +52,8 @@
 
           <div class="campo">
             <label for="celular">Celular</label>
-            <input id="celular" name="celular" type="tel" autocomplete="tel" placeholder="Ej. +57 300 123 4567" required>
+            <input id="celular" name="celular" type="tel" inputmode="numeric" autocomplete="tel" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3 (ejemplo: 3001234567)." aria-describedby="ayuda-celular" required>
+            <small class="ayuda-campo" id="ayuda-celular">10 dígitos, debe empezar por 3. Ejemplo: 3001234567.</small>
           </div>
         </fieldset>
 
@@ -60,7 +62,7 @@
 
           <div class="campo">
             <label for="fecha">Fecha del alquiler</label>
-            <input id="fecha" name="fecha" type="date" required>
+            <input id="fecha" name="fecha" type="date" min="2026-11-01" max="2026-12-31" required>
           </div>
 
           <div class="campo">
@@ -93,7 +95,7 @@
 
           <div class="campo">
             <label for="cantidad">Cantidad de bicicletas</label>
-            <input id="cantidad" name="cantidad" type="number" min="1" step="1" value="1" required>
+            <input id="cantidad" name="cantidad" type="number" min="1" max="6" step="1" value="1" required>
           </div>
 
           <div class="campo">
@@ -108,7 +110,7 @@
 
           <div class="campo">
             <label for="comentarios">Comentarios</label>
-            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
           </div>
         </fieldset>
 

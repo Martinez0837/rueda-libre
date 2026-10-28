@@ -60,3 +60,37 @@ Formulario de reserva (2026-10-27)
 - Se eligió un checkbox para aceptar las políticas porque expresa una decisión
   afirmativa independiente que debe marcar la persona para enviar el formulario.
 - Los tres recorridos del selector coinciden con los ofrecidos en Tarifas y rutas.
+
+Validación nativa del formulario (2026-10-27)
+- Se agregaron minlength, maxlength, pattern/title y límites min/max donde aplican.
+  Los mensajes junto a documento y celular explican el formato esperado.
+- Se probó el formulario en el navegador; los envíos de prueba se interceptaron
+  para verificar la validación sin enviar datos a un servidor.
+
+| Campo | Dato de prueba | Resultado esperado | Resultado obtenido |
+|---|---|---|---|
+| Nombre completo | Al | Bloquear: menos de 3 caracteres | Bloqueado por minlength |
+| Nombre completo | Ana | Aceptar | Válido |
+| Documento | 12A456 | Bloquear: contiene letras | Bloqueado por pattern |
+| Documento | 12345678901 | Bloquear: excede 10 dígitos | Inválido por pattern |
+| Documento | 123456 | Aceptar: 6 dígitos | Válido |
+| Correo | ana@ | Bloquear formato incompleto | Bloqueado por type=email |
+| Celular | 1234567890 | Bloquear: no comienza por 3 | Bloqueado por pattern |
+| Celular | 300123 | Bloquear: menos de 10 dígitos | Bloqueado por pattern |
+| Celular | 3001234567 | Aceptar: 10 dígitos y comienza por 3 | Válido; envío de prueba permitido |
+| Fecha del alquiler | 2026-10-31 | Bloquear: anterior al rango | Envío bloqueado |
+| Fecha del alquiler | 2026-11-01 | Aceptar: límite inferior | Válido |
+| Fecha del alquiler | 2026-12-31 | Aceptar: límite superior | Válido |
+| Fecha del alquiler | 2027-01-01 | Bloquear: posterior al rango | Envío bloqueado |
+| Cantidad de bicicletas | 0 | Bloquear: menor que 1 | Envío bloqueado |
+| Cantidad de bicicletas | 7 | Bloquear: mayor que 6 | Envío bloqueado |
+| Cantidad de bicicletas | 1 y 6 | Aceptar los dos límites | Ambos valores válidos |
+| Plan | Sin seleccionar opción | Bloquear campo obligatorio | Envío bloqueado |
+| Políticas de alquiler | Casilla sin marcar | Bloquear campo obligatorio | Envío bloqueado |
+| Comentarios | Intentar escribir 301 caracteres | No permitir más de 300 | maxlength limita el valor a 300; válido al límite |
+
+- Prueba con teclado: Tab recorrió los campos en orden; las flechas cambiaron
+  entre opciones de bicicleta; Espacio marcó las políticas; Enter envió el
+  formulario completo válido. Shift+Tab regresó del botón a la casilla.
+- El envío válido se interceptó durante la prueba; action="#" no procesa ni
+  almacena reservas porque el proyecto aún no tiene un servidor configurado.
