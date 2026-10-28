@@ -1,3 +1,4 @@
+/* Variables de marca y espaciado */
 :root {
   --verde-ruta: #1e7a4f;
   --naranja-pedal: #f39a2b;
@@ -11,7 +12,7 @@
 
   --espaciado-xs: 0.5rem;
   --espaciado-sm: 0.75rem;
-  --espaciado-md: 1rem;
+  --espaciado-md: 1 rem;
   --espaciado-lg: 1.5rem;
   --espaciado-xl: 2rem;
 
@@ -19,38 +20,39 @@
   --sombra-color: rgba(20, 33, 61, 0.12);
 }
 
+/* Base y box model */
 main {
   width: min(100% - 2rem, 72rem);
   max-width: 72rem;
   margin-inline: auto;
 }
 
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--fuente-titulos);
-    font-weight: 700;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+}
 
-  strong,
-  b,
-  th,
-  dt {
-    font-weight: 600;
-  }
+strong,
+b,
+th,
+dt {
+  font-weight: 600;
+}
 
-  .horario-atencion {
+.horario-atencion {
     margin-top: var(--espaciado-lg);
     padding: var(--espaciado-sm) var(--espaciado-md);
     border: 1px solid var(--borde-suave);
@@ -59,23 +61,23 @@ main {
     text-align: center;
   }
 
-  .horario-atencion h2 {
+.horario-atencion h2 {
     margin-bottom: var(--espaciado-xs);
     color: var(--azul-noche);
     font-size: 1rem;
   }
 
-  .horario-atencion p {
+.horario-atencion p {
     color: var(--gris-asfalto);
   }
 
-  body {
+body {
     font-family: var(--fuente-texto);
     color: var(--azul-noche);
     background-color: var(--crema);
   }
 
-  /* Reserva */
+/* Formulario de reservas */
   .fondo {
     margin: 0;
     min-height: 100vh;
@@ -107,12 +109,7 @@ main {
     line-height: 1.55;
   }
 
-  .isla h1,
-  .isla .intro {
-    text-align: center;
-  }
-
-  .campo {
+    .campo {
     margin-bottom: var(--espaciado-md);
   }
 
@@ -223,7 +220,8 @@ main {
     outline-offset: 3px;
   }
 
-  button {
+/* Controles y botones */
+button {
     width: 100%;
     min-height: 3.25rem;
     margin-top: var(--espaciado-xs);
@@ -261,7 +259,7 @@ main {
     }
 
   }
-  /* Inicio */
+/* Navegación compartida */
 
   #navbar {
     display: flex;
@@ -394,25 +392,35 @@ main {
 
   }
 
-  .bienvenida {
+  .encabezado-pagina {
     width: min(100% - 2rem, 72rem);
     max-width: 72rem;
-    min-height: 40vh;
-    margin: var(--espaciado-lg) auto var(--espaciado-md);
+    margin: var(--espaciado-lg) auto;
     padding: var(--espaciado-lg);
     border: 1px solid var(--crema);
     border-radius: var(--espaciado-lg);
-    background: linear-gradient(120deg, var(--crema), var(--naranja-pedal));
+    background-color: var(--naranja-pedal);
     box-shadow: 0 12px 32px var(--sombra-color);
     color: var(--azul-noche);
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    font-weight: 600;
     text-align: center;
   }
 
-  .bienvenida h1 {
+  .bienvenida {
+    min-height: 20vh;
+    margin-bottom: var(--espaciado-md);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 600;
+  }
+
+  .encabezado-pagina h1 {
+    margin: 0;
     color: var(--azul-noche);
-    font-size: inherit;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+  }
+
+  .encabezado-reserva {
+    width: 100%;
+    margin: 0 0 var(--espaciado-lg);
   }
 
   .bienvenida p {
@@ -456,13 +464,12 @@ main {
   }
 
   .servicios-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--naranja-pedal);
     color: var(--azul-noche);
-  }
-
-  .servicios-intro h2,
-  .servicios-intro p {
-    color: var(--azul-noche);
+    text-align: center;
   }
 
   .otros-servicios {
@@ -473,8 +480,7 @@ main {
     color: var(--blanco);
   }
 
-  #about-us,
-  .servicios-intro {
+  #about-us {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -489,38 +495,10 @@ main {
     text-align: center;
   }
 
-  .contenido-inicio .boton-encuentranos {
-    align-self: center;
-    margin-top: var(--espaciado-md);
-    padding: var(--espaciado-sm) var(--espaciado-md);
-    border: 1px solid var(--verde-ruta);
-    border-radius: 8px;
-    background-color: var(--verde-ruta);
-    color: var(--blanco);
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 160ms ease, transform 160ms ease;
-  }
-
-  .boton-encuentranos:hover {
-    background-color: var(--verde-ruta);
-    transform: translateY(-2px);
-  }
-
-  .boton-encuentranos:focus-visible {
-    outline: 3px solid var(--azul-noche);
-    outline-offset: 3px;
-  }
-
   .contenido-inicio a {
     color: var(--verde-ruta);
     font-weight: 600;
     text-underline-offset: 3px;
-  }
-
-  .servicios-intro {
-    color: var(--azul-noche);
-    text-align: center;
   }
 
   .servicios-intro h2 {
@@ -532,6 +510,7 @@ main {
     line-height: 1.7;
   }
 
+/* Botones y llamadas a la acción */
   .servicios-intro > a {
     align-self: center;
     padding: var(--espaciado-sm) var(--espaciado-md);
@@ -548,18 +527,18 @@ main {
     transform: translateY(-2px);
   }
 
-  .boton-reservar {
+  .boton-reservar,
+  .boton-inicio {
     display: inline-block;
     padding: var(--espaciado-sm) var(--espaciado-md);
-    border: 2px solid var(--verde-ruta);
+    border: 1px solid var(--verde-ruta);
     border-radius: 8px;
     background-color: var(--verde-ruta);
     color: var(--blanco);
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    text-underline-offset: 3px;
-    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+    transition: background-color 160ms ease, transform 160ms ease;
   }
 
   .contenido-inicio a.boton-reservar {
@@ -567,7 +546,9 @@ main {
   }
 
   .boton-reservar:hover,
-  .boton-reservar:focus {
+  .boton-reservar:focus,
+  .boton-inicio:hover,
+  .boton-inicio:focus {
     border-color: var(--azul-noche);
     background-color: var(--azul-noche);
     color: var(--blanco);
@@ -575,17 +556,13 @@ main {
     transform: translateY(-2px);
   }
 
-  .boton-reservar:focus {
-    outline: 3px solid var(--azul-noche);
-    outline-offset: 3px;
-  }
-
   .accion-reserva {
     margin: var(--espaciado-lg) 0;
     text-align: center;
   }
 
-  .alquiler-card > img {
+/* Tarjetas y componentes de Inicio */
+.alquiler-card > img {
     display: block;
     width: 100%;
     height: 10.625rem;
@@ -609,11 +586,6 @@ main {
 
   .otros-servicios > h2 {
     margin-bottom: var(--espaciado-lg);
-  }
-
-  .servicios-grid {
-    padding: 0;
-    list-style: none;
   }
 
   .servicio-card {
@@ -644,29 +616,6 @@ main {
   .servicio-contenido p {
     color: var(--gris-asfalto);
     line-height: 1.65;
-  }
-
-  .boton-rutas {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 10px 16px;
-    border: 1px solid var(--verde-ruta);
-    border-radius: 8px;
-    background-color: var(--azul-noche);
-    color: var(--blanco);
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 160ms ease, transform 160ms ease;
-  }
-
-  .boton-rutas:hover {
-    background-color: var(--azul-noche);
-    transform: translateY(-2px);
-  }
-
-  .boton-rutas:focus-visible {
-    outline: 3px solid var(--azul-noche);
-    outline-offset: 3px;
   }
 
   .servicio-texto {
@@ -718,28 +667,38 @@ main {
     gap: 8px;
   }
 
+/* Footer compartido y acceso fijo a WhatsApp */
+  body:not(.fondo) {
+    padding-bottom: 5rem;
+  }
+
+  .fondo.pagina-reserva {
+    padding-bottom: 5rem;
+  }
+
   .pie-contacto {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
-    margin: 32px 0 16px;
-    padding: 20px 24px;
+    gap: var(--espaciado-md);
+    width: min(100% - 2rem, 72rem);
+    margin: var(--espaciado-xl) auto var(--espaciado-md);
+    padding: var(--espaciado-lg);
     border: 1px solid var(--borde-suave);
-    border-radius: 14px;
+    border-radius: var(--espaciado-md);
     background-color: var(--crema);
     box-shadow: 0 8px 24px var(--sombra-color);
   }
 
   .fondo ~ .pie-contacto {
     justify-self: center;
-    width: calc(100vw - 32px);
+    width: min(100% - 2rem, 72rem);
     margin-inline: 0;
   }
 
   .pie-contacto dd {
-    margin-top: 6px;
+    margin-top: var(--espaciado-xs);
   }
 
   .pie-contacto p {
@@ -747,7 +706,34 @@ main {
     text-align: right;
   }
 
-  @media (max-width: 600px) {
+  .whatsapp-fijo {
+    position: fixed;
+    right: var(--espaciado-md);
+    bottom: var(--espaciado-md);
+    z-index: 10;
+    display: inline-block;
+    padding: var(--espaciado-sm) var(--espaciado-md);
+    border: 1px solid var(--verde-ruta);
+    border-radius: 999px;
+    background-color: var(--verde-ruta);
+    box-shadow: 0 4px 16px var(--sombra-color);
+    color: var(--blanco);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .whatsapp-fijo:hover {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+  }
+
+  .whatsapp-fijo:focus-visible {
+    outline: 3px solid var(--azul-noche);
+    outline-offset: 3px;
+  }
+
+/* Ajustes responsive compartidos */
+@media (max-width: 600px) {
     #navbar {
       align-items: flex-start;
       flex-direction: column;
@@ -781,7 +767,7 @@ main {
     }
 
     .fondo ~ .pie-contacto {
-      width: calc(100vw - 16px);
+      width: min(100% - 2rem, 72rem);
       margin-inline: 0;
     }
 
@@ -797,7 +783,7 @@ main {
     }
   }
 
-/* Tarifas */
+/* Tarifas, tablas y galerías */
 .pagina-tarifas {
   padding: 0 clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
 }
@@ -806,27 +792,6 @@ main {
   width: min(100%, 72rem);
   max-width: 72rem;
   margin-inline: auto;
-}
-
-.encabezado-tarifas {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--espaciado-md);
-  margin: var(--espaciado-lg) 0;
-  padding: var(--espaciado-lg) clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
-  border: 1px solid var(--crema);
-  border-radius: 20px;
-  background-color: var(--naranja-pedal);
-  box-shadow: 0 12px 32px var(--sombra-color);
-}
-
-.encabezado-tarifas h1 {
-  flex: 1;
-  margin: 0;
-  color: var(--azul-noche);
-  font-size: clamp(1.25rem, 3.5vw, 2rem);
-  text-align: left;
 }
 
 .pagina-tarifas > p:first-of-type {
@@ -878,6 +843,7 @@ main {
 }
 
 .categoria-bicicletas {
+  position: relative;
   width: 100%;
   max-width: 68rem;
   margin: var(--espaciado-lg) auto;
@@ -888,9 +854,29 @@ main {
   box-shadow: 0 8px 24px var(--sombra-color);
 }
 
+.etiqueta-nuevo {
+  position: absolute;
+  top: var(--espaciado-md);
+  right: var(--espaciado-md);
+  z-index: 1;
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  border: 1px solid var(--naranja-pedal);
+  border-radius: 999px;
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .categoria-bicicletas h2 {
   margin: 0 0 var(--espaciado-md);
   text-align: center;
+}
+
+.categoria-electrica h2 {
+  padding-right: 5rem;
+  text-align: left;
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .galeria-bicicletas {
@@ -954,54 +940,8 @@ main {
   text-align: left;
 }
 
-.boton-inicio {
-  display: inline-block;
-  flex-shrink: 0;
-  padding: var(--espaciado-sm) var(--espaciado-md);
-  border: 1px solid var(--verde-ruta);
-  border-radius: 8px;
-  background-color: var(--verde-ruta);
-  color: var(--blanco);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 160ms ease, transform 160ms ease;
-}
-
-.boton-inicio:hover {
-  background-color: var(--azul-noche);
-  transform: translateY(-2px);
-}
-
-.boton-inicio:focus-visible {
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 3px;
-}
-
 .boton-inicio:active {
   transform: translateY(0);
-}
-
-.pagina-tarifas .pie-contacto {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin: 32px 0 16px;
-  padding: 20px 24px;
-  border: 1px solid var(--borde-suave);
-  border-radius: 14px;
-  background-color: var(--crema);
-  box-shadow: 0 8px 24px var(--sombra-color);
-}
-
-.pagina-tarifas .pie-contacto dd {
-  margin-top: 6px;
-}
-
-.pagina-tarifas .pie-contacto p {
-  color: var(--gris-asfalto);
-  text-align: right;
 }
 
 @media (max-width: 520px) {
@@ -1009,17 +949,4 @@ main {
     overflow-x: auto;
   }
 
-  .encabezado-tarifas {
-    align-items: flex-start;
-  }
-
-  .pagina-tarifas .pie-contacto {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--espaciado-md);
-  }
-
-  .pagina-tarifas .pie-contacto p {
-    text-align: left;
-  }
 }

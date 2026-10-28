@@ -220,3 +220,79 @@ Box model y espaciado (2026-10-28)
 - Verificación en navegador a 1366px y 390px: todos los elementos computan
   border-box, los principales quedan centrados y limitados, la navegación no
   produce desbordamiento horizontal y ninguna imagen de tarjeta sale de ella.
+
+Cierre de semana: Rueda Libre v1.0 (2026-10-28)
+
+Mapa de construcción de los 12 MiniRetos
+
+| MiniReto | Qué aporta | Parte del producto que construye | Cómo se conecta con los siguientes |
+|---|---|---|---|
+| 1. Kilómetro 0: repositorio y página base | Repositorio, carpetas, index.html inicial y bitácora. | Cimientos del proyecto. | Todo el sitio se mantiene en esta base compartida. |
+| 2. La vitrina de Rueda Libre | Contenido jerarquizado, listas, imágenes y enlaces. | Página de Inicio. | Los enlaces llegan a Tarifas; la semántica se mejora en el reto 5. |
+| 3. Tarifas claras: tablas y rutas relativas | Tablas de alquiler y recorridos con rutas relativas. | Página de Tarifas y rutas. | Los datos se estilizan en el reto 11; sus páginas se conectan por el menú. |
+| 4. Rueda Libre v0.1: sitio navegable | Menú, pie común y página inicial de Reservas. | Navegación entre páginas. | Sirve de base para la semántica y el formulario. |
+| 5. Estructura con significado | Regiones semánticas en las tres páginas. | Estructura HTML del sitio. | Los estilos posteriores se apoyan en header, nav, main y footer. |
+| 6. El formulario de reservas | Fieldsets, controles, etiquetas y datos requeridos. | Página de Reservas. | Recibe las reglas de validación del reto 7 y los estilos visuales. |
+| 7. Reservas sin errores: validación y teclado | Validación nativa y orden lógico de navegación. | Formulario confiable. | Sus controles y estados se conectan con el reto 10. |
+| 8. Rueda Libre v0.2: accesible y publicada | Auditoría, mapa de contraste y publicación inicial. | Accesibilidad y primera versión pública. | El mapa de marca guía las variables CSS del reto 9. |
+| 9. La identidad de Rueda Libre | Hoja externa, variables, fuentes y colores. | Identidad visual compartida. | Las variables se reutilizan en los retos de interacción y layout. |
+| 10. Navegación con estados y sin conflictos | Página actual, hover, foco, botones y cascada. | Interacción visual accesible. | Se conserva al reorganizar los componentes en el reto 11. |
+| 11. Todo en su lugar: modelo de caja | Box sizing, espaciado, tarjetas, tablas y formulario. | Layout legible y adaptable. | Prepara la tarjeta para la etiqueta posicionada del reto 12. |
+| 12. Rueda Libre v1.0: lanzamiento | Etiqueta Nuevo, WhatsApp fijo, limpieza visual y revisión final. | Producto integrado final. | Reúne los 11 retos anteriores y servirá de base para la semana 2. |
+
+Revisión final local del MiniReto 12
+- Se añadió «Nuevo» como etiqueta posicionada de forma absoluta dentro de la
+  categoría de bicicletas eléctricas. La tarjeta conserva sus mismas dimensiones
+  con la etiqueta visible u oculta; se dejó espacio visual en el título para que
+  ambos textos no se superpongan.
+- Las tres páginas comparten un encabezado visual, navegación, estilos de botón
+  y pie desde css/styles.css. WhatsApp es un enlace fijo abajo a la derecha,
+  abre https://wa.me/573000000000 en otra pestaña y tiene indicador de foco.
+- El espacio inferior de las páginas reserva sitio para el control fijo, de modo
+  que no se interponga con el contenido del pie al llegar al final.
+- Se revisaron las tres páginas a 1366px y 390px: no se encontraron imágenes
+  rotas ni desbordamiento horizontal; las imágenes de las galerías cargan y las
+  fuentes y estilos locales están presentes. Los títulos de página y estilos de
+  pie computan de forma común, y las etiquetas HTML de WhatsApp incluyen
+  target="_blank" y rel="noopener noreferrer".
+- La navegación por teclado llega al enlace de WhatsApp y muestra un contorno
+  Azul Noche; el formulario mantiene sus controles y validación nativa. El
+  analizador de VS Code no informó errores en los HTML ni en styles.css.
+- El control fijo conserva aproximadamente 95px de espacio libre tras el pie,
+  sumando el margen de seguridad que evita que tape el contenido final. Se
+  confirmó en el navegador que «Nuevo» queda en posición absoluta, no cambia el
+  tamaño de su tarjeta y no se cruza visualmente con el título a 390px y 1366px.
+- El formulario completó checkValidity() con datos válidos dentro del rango; no
+  se envió información a ningún servicio.
+
+Resumen del producto
+- Rueda Libre es un sitio estático de tres páginas: Inicio, Tarifas y rutas, y
+  Reservas. Se conectan mediante navegación común y comparten identidad visual
+  con variables CSS, Montserrat para títulos y Open Sans para textos.
+- Inicio presenta los servicios; Tarifas compara bicicletas y recorridos; el
+  formulario de Reservas recoge datos con etiquetas asociadas y validación nativa.
+- La estructura semántica y los estados de foco facilitan la accesibilidad. La
+  tarjeta de bicicletas eléctricas resalta «Nuevo» sin mover su contenido y el
+  enlace fijo a WhatsApp da acceso al canal principal desde las tres páginas.
+- Las comprobaciones locales de navegación, foco, fuentes, box model, imágenes,
+  dimensiones y estilos quedaron anotadas en esta bitácora.
+
+Pendiente de cierre externo
+- URL de GitHub Pages para Rueda Libre v1.0: pendiente; registrar aquí al
+  publicarla. No se creó commit, no se hizo push y no se añadió ningún archivo al
+  staging, tal como se indicó. Por tanto, no es posible confirmar desde esta
+  sesión una URL pública v1.0 ni afirmar que el repositorio esté actualizado.
+- Después de publicar, registrar aquí la URL y comprobar en producción las tres
+  páginas, las imágenes, las fuentes, los enlaces y el formulario.
+- El requisito de «un commit por MiniReto» también queda pendiente de la
+  propietaria; no se generaron commits.
+
+Qué mejoraría en la siguiente iteración
+- Conectar el formulario con un servicio de reservas y disponibilidad real;
+  actualmente el envío estático no guarda ni confirma solicitudes.
+- Confirmar en dispositivos reales el recorrido completo por teclado y lector
+  de pantalla, y ejecutar una auditoría automatizada de accesibilidad.
+- Revisar rendimiento de imágenes y carga móvil, y completar la validación de
+  enlaces y recursos una vez publicada la versión definitiva.
+- Mantener una bitácora por reto y registrar la URL, pruebas de producción y
+  decisiones de cada lanzamiento.
