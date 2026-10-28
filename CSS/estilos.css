@@ -153,12 +153,12 @@
   input:focus,
   select:focus,
   textarea:focus {
-    border-color: #5b9f98;
-    box-shadow: 0 0 0 4px rgba(91, 159, 152, 0.14);
+    border-color: #14213d;
+    box-shadow: 0 0 0 4px rgba(20, 33, 61, 0.14);
   }
 
   .formulario-reserva button:focus-visible {
-    outline: 3px solid #5b9f98;
+    outline: 3px solid #14213d;
     outline-offset: 3px;
   }
 
@@ -243,7 +243,9 @@
     padding: 0;
   }
 
-  #navbar .marca h1 {
+  #navbar .nombre-marca {
+    margin: 0;
+    font-weight: 700;
     font-size: clamp(1.4rem, 3.5vw, 2rem);
   }
 
@@ -275,8 +277,12 @@
     transform: translateY(-2px);
   }
 
-  #navbar .navbar-links a:focus-visible {
-    outline: 3px solid #5b9f98;
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid #14213d;
     outline-offset: 3px;
   }
 
@@ -299,7 +305,7 @@
     text-align: center;
   }
 
-  .bienvenida h2 {
+  .bienvenida h1 {
     color: #243b53;
     font-size: inherit;
   }
@@ -378,7 +384,7 @@
   }
 
   .boton-encuentranos:focus-visible {
-    outline: 3px solid #5b9f98;
+    outline: 3px solid #14213d;
     outline-offset: 3px;
   }
 
@@ -496,7 +502,7 @@
   }
 
   .boton-rutas:focus-visible {
-    outline: 3px solid #5b9f98;
+    outline: 3px solid #14213d;
     outline-offset: 3px;
   }
 
@@ -785,7 +791,7 @@
 }
 
 .boton-inicio:focus-visible {
-  outline: 3px solid #5b9f98;
+  outline: 3px solid #14213d;
   outline-offset: 3px;
 }
 

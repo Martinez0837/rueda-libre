@@ -94,3 +94,49 @@ Validación nativa del formulario (2026-10-27)
   formulario completo válido. Shift+Tab regresó del botón a la casilla.
 - El envío válido se interceptó durante la prueba; action="#" no procesa ni
   almacena reservas porque el proyecto aún no tiene un servidor configurado.
+
+Auditoría de accesibilidad para la publicación (2026-10-27)
+
+| Hallazgo | Corrección o verificación |
+|---|---|
+| La marca repetía un h1 en cada página, además del título de la página en Tarifas y Reserva. | El nombre de marca pasó a ser texto de párrafo; cada página tiene un único h1 de contenido y los subtítulos siguen niveles consecutivos. |
+| La imagen del grupo de bicicletas en Inicio tenía un alt genérico que no describía la imagen. | Se actualizó el alt para describir varias bicicletas urbanas, de montaña y eléctricas. |
+| El logo del encabezado repetía el nombre accesible del enlace y el archivo es un símbolo genérico de alquiler. | Se marcó como decorativo con alt vacío; el enlace conserva el nombre accesible «Rueda Libre, inicio». |
+| La región nav no tenía nombre para distinguirla como navegación principal. | Se añadió aria-label="Navegación principal" en las tres páginas. |
+| El enlace de Google Maps abría una pestaña nueva sin avisar y no incluía rel de protección. | Se aclaró el texto («abre en pestaña nueva») y se añadieron rel="noopener noreferrer". |
+| Los indicadores de foco usaban un turquesa de contraste insuficiente o variaban entre enlaces y controles. | Se unificó el foco visible en azul noche (#14213D) para enlaces, botones y controles. |
+| Comprobación de alternativas y recursos gráficos. | Las 15 imágenes referenciadas entre las tres páginas cargan; todas tienen atributo alt. El logo redundante usa alt vacío y el resto describe su contenido. |
+| Comprobación de idioma, encabezados, enlaces y navegación. | Las tres páginas declaran lang="es", tienen un h1 y jerarquía sin saltos; los enlaces internos describen su destino. El recorrido del formulario por teclado se probó con Tab, Shift+Tab, flechas, Espacio y Enter. |
+
+Mapa de uso de color de marca: relaciones comprobadas con WebAIM Contrast Checker.
+«Texto normal» requiere al menos 4.5:1; «solo texto
+grande», 3:1; debajo de 3:1, «no apta».
+
+| Texto | Fondo | Contraste | Clasificación |
+|---|---|---:|---|
+| Blanco (#FFFFFF) | Verde Ruta (#1E7A4F) | 5.31:1 | Apta para texto normal |
+| Blanco (#FFFFFF) | Naranja Pedal (#F39A2B) | 2.21:1 | No apta |
+| Azul Noche (#14213D) | Naranja Pedal (#F39A2B) | 7.2:1 | Apta para texto normal |
+| Azul Noche (#14213D) | Crema (#FAF6EF) | 14.82:1 | Apta para texto normal |
+| Gris Asfalto (#5B6470) | Crema (#FAF6EF) | 5.56:1 | Apta para texto normal |
+| Verde Ruta (#1E7A4F) | Crema (#FAF6EF) | 4.93:1 | Apta para texto normal |
+| Naranja Pedal (#F39A2B) | Crema (#FAF6EF) | 2.05:1 | No apta |
+| Blanco (#FFFFFF) | Azul Noche (#14213D) | 15.97:1 | Apta para texto normal |
+
+Uso propuesto para aplicar con CSS:
+- Fondo general: Crema. Texto principal: Azul Noche; texto secundario: Gris Asfalto.
+- Enlaces y botones Verde Ruta con texto blanco.
+- Destacados y botones secundarios Naranja Pedal con texto Azul Noche.
+- No usar texto blanco sobre Naranja Pedal ni texto Naranja Pedal sobre Crema;
+  esos pares no alcanzan 3:1 y el naranja debe quedar como superficie decorativa
+  o acompañarse de texto Azul Noche.
+- Este mapa documenta combinaciones; no se cambió todavía la paleta visual actual.
+
+Publicación de GitHub Pages:
+- URL pública de Rueda Libre v0.2: pendiente. No se publica ni se inventa una URL:
+  este clon local no tiene remoto configurado, la rama actual es
+  semana-1-dia-2 y no existe una rama local llamada main. La publicación y el
+  push quedan a cargo del usuario, según su indicación.
+- Después de publicar desde la rama principal, añadir aquí la URL pública y
+  agregarla a la descripción del repositorio. La comprobación de enlaces e
+  imágenes en las páginas públicas queda pendiente hasta disponer de esa URL.
