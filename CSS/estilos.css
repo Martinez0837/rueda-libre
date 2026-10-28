@@ -1,0 +1,829 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .horario-atencion {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: 1px solid #dce3ec;
+    border-radius: 12px;
+    background-color: #f5f8fc;
+    text-align: center;
+  }
+
+  .horario-atencion h2 {
+    margin-bottom: 6px;
+    color: #243b53;
+    font-size: 1rem;
+  }
+
+  .horario-atencion p {
+    color: #536273;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202a36;
+  }
+
+  /* Reserva */
+  .fondo {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: radial-gradient(circle at 15% 15%, #d8f3ef 0, transparent 34%), linear-gradient(135deg, #edf5ff, #f5f1ff);
+  }
+
+  .isla {
+    width: min(100%, 460px);
+    padding: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 24px 70px rgba(48, 72, 110, 0.16);
+    backdrop-filter: blur(12px);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.7rem, 5vw, 2rem);
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    margin: 10px 0 26px;
+    color: #687586;
+    line-height: 1.55;
+  }
+
+  .isla h1,
+  .isla .intro {
+    text-align: center;
+  }
+
+  .campo {
+    margin-bottom: 18px;
+  }
+
+  .grupo-reserva {
+    min-width: 0;
+    margin: 0 0 18px;
+    padding: 0;
+    border: 0;
+  }
+
+  .grupo-reserva legend {
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .formulario-reserva h2 {
+    margin: 0 0 22px;
+    text-align: center;
+  }
+
+  .etiqueta-campo {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .opciones-reserva {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .opcion-reserva {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]),
+  select,
+  textarea {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 15px;
+    border: 1px solid #dce3ec;
+    border-radius: 13px;
+    outline: none;
+    background: #fbfcfe;
+    color: inherit;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .opcion-reserva input[type="radio"],
+  .opcion-reserva input[type="checkbox"] {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    accent-color: #31536f;
+  }
+
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #5b9f98;
+    box-shadow: 0 0 0 4px rgba(91, 159, 152, 0.14);
+  }
+
+  .formulario-reserva button:focus-visible {
+    outline: 3px solid #5b9f98;
+    outline-offset: 3px;
+  }
+
+  button {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 6px;
+    border: 0;
+    border-radius: 14px;
+    background: #243b53;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 160ms ease, background 160ms ease;
+  }
+
+  button:hover {
+    background: #31536f;
+    transform: translateY(-1px);
+
+  }
+
+  .nota {
+    margin: 16px 0 0;
+    color: #7a8795;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+
+    .isla {
+
+      padding: 28px 22px;
+
+    }
+
+  }
+  /* Inicio */
+
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    margin: 12px clamp(16px, 4vw, 40px);
+    padding: 12px clamp(16px, 3vw, 32px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(216, 243, 239, 0.9), transparent 42%),
+      linear-gradient(120deg, #edf5ff, #f5f1ff);
+    box-shadow: 0 12px 32px rgba(48, 72, 110, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  #navbar .marca,
+  #navbar .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 24px);
+  }
+
+  #navbar .marca {
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #navbar .navbar-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+  }
+
+  #navbar .marca h1 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+  }
+
+  #navbar .logo {
+    flex: 0 0 auto;
+    width: 75px;
+    height: 68px;
+    object-fit: contain;
+  }
+
+  main img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #navbar .navbar-links a {
+    display: inline-block;
+    padding: 10px 14px;
+    border: 1px solid #243b53;
+    border-radius: 8px;
+    background-color: #243b53;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  #navbar .navbar-links a:hover {
+    background-color: #31536f;
+    transform: translateY(-2px);
+  }
+
+  #navbar .navbar-links a:focus-visible {
+    outline: 3px solid #5b9f98;
+    outline-offset: 3px;
+  }
+
+  #navbar .navbar-links a:active {
+    transform: translateY(0);
+
+  }
+
+  .bienvenida {
+    width: min(100% - 32px, 1080px);
+    margin: 28px auto 20px;
+    padding: 28px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    background: linear-gradient(120deg, #ffffff, #edf5ff 58%, #f5f1ff);
+    box-shadow: 0 12px 32px rgba(48, 72, 110, 0.08);
+    color: #243b53;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .bienvenida h2 {
+    color: #243b53;
+    font-size: inherit;
+  }
+
+  .bienvenida p {
+    display: block;
+    margin-top: 8px;
+    color: #687586;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .contenido-inicio {
+    display: grid;
+    gap: 20px;
+    width: min(100% - 32px, 1080px);
+    margin: 0 auto;
+  }
+
+  .presentacion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(210px, 1fr));
+    align-items: stretch;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .contenido-card {
+    padding: clamp(20px, 4vw, 32px);
+    border: 1px solid #e1e8f0;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 28px rgba(32, 42, 54, 0.07);
+  }
+
+  .contenido-card h2 {
+    margin-bottom: 16px;
+    color: #243b53;
+    text-align: center;
+  }
+
+  #about-us,
+  .servicios-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #about-us > p,
+  .ubicacion-card > p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #536273;
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  .contenido-inicio .boton-encuentranos {
+    align-self: center;
+    margin-top: 16px;
+    padding: 10px 16px;
+    border: 1px solid #243b53;
+    border-radius: 8px;
+    background-color: #243b53;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .boton-encuentranos:hover {
+    background-color: #31536f;
+    transform: translateY(-2px);
+  }
+
+  .boton-encuentranos:focus-visible {
+    outline: 3px solid #5b9f98;
+    outline-offset: 3px;
+  }
+
+  .contenido-inicio a {
+    color: #276c68;
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+
+  .servicios-intro {
+    color: #687586;
+    text-align: center;
+  }
+
+  .servicios-intro h2 {
+    margin-bottom: 16px;
+  }
+
+  .servicios-intro p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .servicios-intro > a {
+    align-self: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #243b53;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .servicios-intro > a:hover {
+    background-color: #31536f;
+    transform: translateY(-2px);
+  }
+
+  .alquiler-card > img {
+    display: block;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .alquiler-card > p {
+    color: #536273;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .otros-servicios > h2 {
+    margin-bottom: 20px;
+  }
+
+  .servicios-grid {
+    padding: 0;
+    list-style: none;
+  }
+
+  .servicio-card {
+    overflow: hidden;
+    border: 1px solid #e1e8f0;
+    border-radius: 14px;
+    background-color: #f8fafc;
+  }
+
+  .servicio-card > img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .servicio-contenido {
+    padding: 18px;
+  }
+
+  .servicio-contenido h3 {
+    margin-bottom: 10px;
+    color: #243b53;
+  }
+
+  .servicio-contenido p {
+    color: #536273;
+    line-height: 1.65;
+  }
+
+  .boton-rutas {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border: 1px solid #243b53;
+    border-radius: 8px;
+    background-color: #243b53;
+    color: #ffffff !important;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .boton-rutas:hover {
+    background-color: #31536f;
+    transform: translateY(-2px);
+  }
+
+  .boton-rutas:focus-visible {
+    outline: 3px solid #5b9f98;
+    outline-offset: 3px;
+  }
+
+  .servicio-texto {
+    display: flex;
+    align-items: center;
+  }
+
+  #how-to-rent ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    list-style-position: inside;
+    counter-reset: pasos;
+    list-style: none;
+  }
+
+  #how-to-rent li {
+    position: relative;
+    min-height: 64px;
+    padding: 16px 16px 16px 54px;
+    border-radius: 12px;
+    background-color: #f5f8fc;
+    color: #536273;
+    line-height: 1.5;
+    counter-increment: pasos;
+  }
+
+  #how-to-rent li::before {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    display: grid;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #d8f3ef;
+    color: #243b53;
+    content: counter(pasos);
+    font-weight: 700;
+    transform: translateY(-50%);
+  }
+
+  .ubicacion-card > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pie-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 32px 0 16px;
+    padding: 20px 24px;
+    border: 1px solid #dce3ec;
+    border-radius: 14px;
+    background-color: #f5f8fc;
+    box-shadow: 0 8px 24px rgba(32, 42, 54, 0.08);
+  }
+
+  .fondo ~ .pie-contacto {
+    justify-self: center;
+    width: calc(100vw - 32px);
+    margin-inline: 0;
+  }
+
+  .pie-contacto dd {
+    margin-top: 6px;
+  }
+
+  .pie-contacto p {
+    color: #687586;
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    #navbar {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #navbar .navbar-links {
+      justify-content: flex-start;
+    }
+
+    .bienvenida {
+      margin-top: 20px;
+      padding: 22px 18px;
+    }
+
+    .servicios-grid,
+    #how-to-rent ol {
+      grid-template-columns: 1fr;
+    }
+
+    .pie-contacto {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-inline: 8px;
+      padding: 18px;
+    }
+
+    .fondo ~ .pie-contacto {
+      width: calc(100vw - 16px);
+      margin-inline: 0;
+    }
+
+    .pie-contacto p {
+      text-align: left;
+    }
+  }
+
+/* Tarifas */
+.pagina-tarifas {
+  padding: 0 clamp(16px, 4vw, 40px);
+}
+
+.encabezado-tarifas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 24px clamp(18px, 4vw, 36px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(216, 243, 239, 0.9), transparent 42%),
+    linear-gradient(120deg, #edf5ff, #f5f1ff);
+  box-shadow: 0 12px 32px rgba(48, 72, 110, 0.12);
+}
+
+.encabezado-tarifas h1 {
+  flex: 1;
+  margin: 0;
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  text-align: left;
+}
+
+.pagina-tarifas > p:first-of-type {
+  text-align: center;
+}
+
+.tarifas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  align-items: start;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.tarifa-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dce3ec;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(32, 42, 54, 0.1);
+}
+
+.tarifa-card h2 {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.tarifa-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tarifa-card caption {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tarifa-card th,
+.tarifa-card td {
+  padding: 8px;
+  border: 1px solid #dce3ec;
+  text-align: left;
+}
+
+.tarifa-card th {
+  background-color: #edf5ff;
+}
+
+.categoria-bicicletas {
+  width: 100%;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 16px;
+  border: 1px solid #dce3ec;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(32, 42, 54, 0.1);
+}
+
+.categoria-bicicletas h2 {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.galeria-bicicletas {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 16px;
+  padding: 4px 4px 12px;
+  list-style: none;
+}
+
+.bicicleta-card {
+  flex: 1 1 calc((100% - 32px) / 3);
+  min-width: 0;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 12px;
+  background-color: #f5f8fc;
+  box-shadow: 0 4px 16px rgba(32, 42, 54, 0.1);
+}
+
+.bicicleta-card img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .bicicleta-card {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .bicicleta-card {
+    flex-basis: 100%;
+  }
+}
+
+.aviso-recorridos {
+  margin: 16px 0 24px;
+  padding: 12px 16px;
+  border: 1px solid #dce3ec;
+  border-radius: 10px;
+  background-color: #f5f8fc;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.aviso-recorridos ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  margin-top: 8px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.boton-inicio {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid #243b53;
+  border-radius: 8px;
+  background-color: #243b53;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.boton-inicio:hover {
+  background-color: #31536f;
+  transform: translateY(-2px);
+}
+
+.boton-inicio:focus-visible {
+  outline: 3px solid #5b9f98;
+  outline-offset: 3px;
+}
+
+.boton-inicio:active {
+  transform: translateY(0);
+}
+
+.pagina-tarifas .pie-contacto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 16px;
+  padding: 20px 24px;
+  border: 1px solid #dce3ec;
+  border-radius: 14px;
+  background-color: #f5f8fc;
+  box-shadow: 0 8px 24px rgba(32, 42, 54, 0.08);
+}
+
+.pagina-tarifas .pie-contacto dd {
+  margin-top: 6px;
+}
+
+.pagina-tarifas .pie-contacto p {
+  color: #687586;
+  text-align: right;
+}
+
+@media (max-width: 520px) {
+  .tarifa-card {
+    overflow-x: auto;
+  }
+
+  .encabezado-tarifas {
+    align-items: flex-start;
+  }
+
+  .pagina-tarifas .pie-contacto {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .pagina-tarifas .pie-contacto p {
+    text-align: left;
+  }
+}

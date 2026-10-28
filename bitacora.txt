@@ -30,3 +30,33 @@ paginas/tarifas.html | Reservas | reservas.html
 paginas/tarifas.html | Reservar ahora | reserva.html
 paginas/tarifas.html | Contacto | mailto:info@ruedalibre.com
 
+Registro de estructura semántica y contenido complementario (2026-10-27)
+- Tarifas: cada tabla vive en su propia sección, con encabezado y caption; se agregó
+  una lista de elementos para llevar dentro de un aside de información complementaria.
+- Reserva: el horario de atención se presenta en un aside separado del formulario:
+  de lunes a viernes, de 7:00 a. m. a 5:00 p. m.
+- Galerías: las bicicletas se agrupan como listas ul/li, porque son colecciones de
+  elementos del mismo tipo. El texto alternativo de cada imagen se conserva en alt.
+- Navegación: el logo y nombre de marca ahora son enlaces a Inicio.
+- Bienvenida: se usa header con encabezado y párrafo, en vez de un span genérico.
+- Contenedores div que se conservan en index.html, paginas/tarifas.html y
+  paginas/reserva.html:
+  * #navbar solo agrupa la marca y la lista de navegación para aplicar el diseño
+    flex; está dentro de nav, por lo que otro landmark no aportaría semántica.
+  * .campo agrupa una etiqueta y su control de formulario para aplicar separación.
+    No se usa fieldset para datos individuales; fieldset/legend se usa cuando se
+    agrupan controles relacionados, como los datos de la reserva.
+- .servicio-contenido ahora es section porque agrupa contenido con título propio
+  dentro de cada artículo de servicio.
+- El informe HTML usa aside para sus recuadros destacados; no conserva div ni span.
+
+Formulario de reserva (2026-10-27)
+- Se organizaron los datos del cliente, las opciones del alquiler y la aceptación
+  de políticas en tres fieldset con sus respectivos legend.
+- Se eligieron botones radio para el tipo de bicicleta porque las opciones son
+  excluyentes; comparten el mismo name para que solo se seleccione una.
+- Se eligieron listas desplegables para plan y recorrido porque cada dato permite
+  escoger una opción de un conjunto definido y compacto.
+- Se eligió un checkbox para aceptar las políticas porque expresa una decisión
+  afirmativa independiente que debe marcar la persona para enviar el formulario.
+- Los tres recorridos del selector coinciden con los ofrecidos en Tarifas y rutas.
