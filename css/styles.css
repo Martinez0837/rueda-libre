@@ -19,7 +19,15 @@
   --sombra-color: rgba(20, 33, 61, 0.12);
 }
 
-  * {
+main {
+  width: min(100% - 2rem, 72rem);
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -43,16 +51,16 @@
   }
 
   .horario-atencion {
-    margin-top: 20px;
-    padding: 14px 16px;
+    margin-top: var(--espaciado-lg);
+    padding: var(--espaciado-sm) var(--espaciado-md);
     border: 1px solid var(--borde-suave);
-    border-radius: 12px;
+    border-radius: var(--espaciado-sm);
     background-color: var(--crema);
     text-align: center;
   }
 
   .horario-atencion h2 {
-    margin-bottom: 6px;
+    margin-bottom: var(--espaciado-xs);
     color: var(--azul-noche);
     font-size: 1rem;
   }
@@ -73,15 +81,15 @@
     min-height: 100vh;
     display: grid;
     place-items: center;
-    padding: 24px;
+    padding: var(--espaciado-lg);
     background-color: var(--crema);
   }
 
   .isla {
-    width: min(100%, 460px);
-    padding: 38px;
+    width: min(100%, 30rem);
+    padding: var(--espaciado-xl);
     border: 1px solid var(--crema);
-    border-radius: 28px;
+    border-radius: 1.75rem;
     background: var(--crema);
     box-shadow: 0 24px 70px var(--sombra-color);
     backdrop-filter: blur(12px);
@@ -94,7 +102,7 @@
   }
 
   .intro {
-    margin: 10px 0 26px;
+    margin: var(--espaciado-sm) 0 var(--espaciado-lg);
     color: var(--gris-asfalto);
     line-height: 1.55;
   }
@@ -105,12 +113,12 @@
   }
 
   .campo {
-    margin-bottom: 18px;
+    margin-bottom: var(--espaciado-md);
   }
 
   .ayuda-campo {
     display: block;
-    margin-top: 6px;
+    margin-top: var(--espaciado-xs);
     color: var(--gris-asfalto);
     font-size: 0.8rem;
     line-height: 1.4;
@@ -118,24 +126,24 @@
 
   .grupo-reserva {
     min-width: 0;
-    margin: 0 0 18px;
+    margin: 0 0 var(--espaciado-lg);
     padding: 0;
     border: 0;
   }
 
   .grupo-reserva legend {
-    margin-bottom: 12px;
+    margin-bottom: var(--espaciado-sm);
     font-weight: 600;
   }
 
   .formulario-reserva h2 {
-    margin: 0 0 22px;
+    margin: 0 0 var(--espaciado-lg);
     text-align: center;
   }
 
   .etiqueta-campo {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: var(--espaciado-xs);
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -143,20 +151,20 @@
   .opciones-reserva {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 24px;
+    gap: var(--espaciado-sm) var(--espaciado-lg);
   }
 
   .opcion-reserva {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--espaciado-xs);
     margin-bottom: 0;
     font-weight: 400;
   }
 
   label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: var(--espaciado-xs);
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -165,10 +173,10 @@
   select,
   textarea {
     width: 100%;
-    min-height: 50px;
-    padding: 12px 15px;
+    min-height: 3.125rem;
+    padding: var(--espaciado-sm) var(--espaciado-md);
     border: 1px solid var(--borde-suave);
-    border-radius: 13px;
+    border-radius: var(--espaciado-sm);
     outline: none;
     background: var(--crema);
     color: inherit;
@@ -197,7 +205,7 @@
   }
 
   textarea {
-    min-height: 110px;
+    min-height: 6.875rem;
     resize: vertical;
   }
 
@@ -217,10 +225,11 @@
 
   button {
     width: 100%;
-    min-height: 52px;
-    margin-top: 6px;
+    min-height: 3.25rem;
+    margin-top: var(--espaciado-xs);
+    padding: var(--espaciado-md) var(--espaciado-lg);
     border: 0;
-    border-radius: 14px;
+    border-radius: var(--espaciado-sm);
     background: var(--verde-ruta);
     color: var(--blanco);
     font: inherit;
@@ -236,7 +245,7 @@
   }
 
   .nota {
-    margin: 16px 0 0;
+    margin: var(--espaciado-md) 0 0;
     color: var(--gris-asfalto);
     font-size: 0.78rem;
     line-height: 1.5;
@@ -247,7 +256,7 @@
 
     .isla {
 
-      padding: 28px 22px;
+      padding: var(--espaciado-lg) var(--espaciado-md);
 
     }
 
@@ -265,10 +274,10 @@
   }
 
   nav {
-    margin: 12px clamp(16px, 4vw, 40px);
-    padding: 12px clamp(16px, 3vw, 32px);
+    margin: var(--espaciado-sm) clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
+    padding: var(--espaciado-sm) clamp(var(--espaciado-md), 3vw, var(--espaciado-lg));
     border: 1px solid var(--crema);
-    border-radius: 20px;
+    border-radius: var(--espaciado-lg);
     background-color: var(--crema);
     box-shadow: 0 12px 32px var(--sombra-color);
     backdrop-filter: blur(12px);
@@ -278,7 +287,7 @@
   #navbar .navbar-links {
     display: flex;
     align-items: center;
-    gap: clamp(10px, 2vw, 24px);
+    gap: var(--espaciado-xs);
   }
 
   #navbar .marca {
@@ -288,10 +297,17 @@
   }
 
   #navbar .navbar-links {
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--espaciado-xs);
+    text-align: right;
     list-style: none;
     padding: 0;
+  }
+
+  #navbar .navbar-links li {
+    display: inline-block;
+    vertical-align: middle;
   }
 
   #navbar .nombre-marca {
@@ -379,11 +395,13 @@
   }
 
   .bienvenida {
-    width: min(100% - 32px, 1080px);
-    margin: 28px auto 20px;
-    padding: 28px 24px;
+    width: min(100% - 2rem, 72rem);
+    max-width: 72rem;
+    min-height: 40vh;
+    margin: var(--espaciado-lg) auto var(--espaciado-md);
+    padding: var(--espaciado-lg);
     border: 1px solid var(--crema);
-    border-radius: 20px;
+    border-radius: var(--espaciado-lg);
     background: linear-gradient(120deg, var(--crema), var(--naranja-pedal));
     box-shadow: 0 12px 32px var(--sombra-color);
     color: var(--azul-noche);
@@ -399,7 +417,7 @@
 
   .bienvenida p {
     display: block;
-    margin-top: 8px;
+    margin-top: var(--espaciado-xs);
     color: var(--azul-noche);
     font-size: 1rem;
     font-weight: 400;
@@ -409,7 +427,8 @@
   .contenido-inicio {
     display: grid;
     gap: var(--espaciado-lg);
-    width: min(100% - 32px, 1080px);
+    width: min(100% - 2rem, 72rem);
+    max-width: 72rem;
     margin: 0 auto;
   }
 
@@ -419,19 +438,19 @@
     align-items: stretch;
     gap: var(--espaciado-md);
     overflow-x: auto;
-    padding-bottom: 12px;
+    padding-bottom: var(--espaciado-sm);
   }
 
   .contenido-card {
-    padding: clamp(20px, 4vw, 32px);
+    padding: clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
     border: 1px solid var(--borde-suave);
-    border-radius: 18px;
+    border-radius: var(--espaciado-lg);
     background-color: var(--crema);
     box-shadow: 0 10px 28px var(--sombra-color);
   }
 
   .contenido-card h2 {
-    margin-bottom: 16px;
+    margin-bottom: var(--espaciado-md);
     color: var(--azul-noche);
     text-align: center;
   }
@@ -463,7 +482,7 @@
 
   #about-us > p,
   .ubicacion-card > p {
-    max-width: 760px;
+    max-width: 48rem;
     margin: 0 auto;
     color: var(--gris-asfalto);
     line-height: 1.75;
@@ -472,8 +491,8 @@
 
   .contenido-inicio .boton-encuentranos {
     align-self: center;
-    margin-top: 16px;
-    padding: 10px 16px;
+    margin-top: var(--espaciado-md);
+    padding: var(--espaciado-sm) var(--espaciado-md);
     border: 1px solid var(--verde-ruta);
     border-radius: 8px;
     background-color: var(--verde-ruta);
@@ -505,17 +524,17 @@
   }
 
   .servicios-intro h2 {
-    margin-bottom: 16px;
+    margin-bottom: var(--espaciado-md);
   }
 
   .servicios-intro p {
-    margin-bottom: 20px;
+    margin-bottom: var(--espaciado-lg);
     line-height: 1.7;
   }
 
   .servicios-intro > a {
     align-self: center;
-    padding: 10px 16px;
+    padding: var(--espaciado-sm) var(--espaciado-md);
     border-radius: 8px;
     background-color: var(--verde-ruta);
     color: var(--blanco);
@@ -531,7 +550,7 @@
 
   .boton-reservar {
     display: inline-block;
-    padding: 10px 16px;
+    padding: var(--espaciado-sm) var(--espaciado-md);
     border: 2px solid var(--verde-ruta);
     border-radius: 8px;
     background-color: var(--verde-ruta);
@@ -562,16 +581,16 @@
   }
 
   .accion-reserva {
-    margin: 20px 0;
+    margin: var(--espaciado-lg) 0;
     text-align: center;
   }
 
   .alquiler-card > img {
     display: block;
     width: 100%;
-    height: 170px;
-    margin-bottom: 16px;
-    border-radius: 12px;
+    height: 10.625rem;
+    margin-bottom: var(--espaciado-md);
+    border-radius: var(--espaciado-sm);
     object-fit: cover;
   }
 
@@ -585,11 +604,11 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-    gap: 16px;
+    gap: var(--espaciado-md);
   }
 
   .otros-servicios > h2 {
-    margin-bottom: 20px;
+    margin-bottom: var(--espaciado-lg);
   }
 
   .servicios-grid {
@@ -599,24 +618,26 @@
 
   .servicio-card {
     overflow: hidden;
+    padding: var(--espaciado-sm);
     border: 1px solid var(--borde-suave);
-    border-radius: 14px;
+    border-radius: var(--espaciado-md);
     background-color: var(--crema);
   }
 
   .servicio-card > img {
     display: block;
     width: 100%;
-    height: 190px;
+    height: 12rem;
     object-fit: cover;
+    border-radius: var(--espaciado-xs);
   }
 
   .servicio-contenido {
-    padding: 18px;
+    padding: var(--espaciado-sm) var(--espaciado-xs);
   }
 
   .servicio-contenido h3 {
-    margin-bottom: 10px;
+    margin-bottom: var(--espaciado-xs);
     color: var(--azul-noche);
   }
 
@@ -730,16 +751,21 @@
     #navbar {
       align-items: flex-start;
       flex-direction: column;
-      gap: 12px;
+      gap: var(--espaciado-sm);
     }
 
     #navbar .navbar-links {
       justify-content: flex-start;
+      text-align: left;
+    }
+
+    #navbar .navbar-links a {
+      padding: var(--espaciado-xs);
     }
 
     .bienvenida {
-      margin-top: 20px;
-      padding: 22px 18px;
+      margin-top: var(--espaciado-md);
+      padding: var(--espaciado-lg) var(--espaciado-md);
     }
 
     .servicios-grid,
@@ -750,8 +776,8 @@
     .pie-contacto {
       flex-direction: column;
       align-items: flex-start;
-      margin-inline: 8px;
-      padding: 18px;
+      margin-inline: var(--espaciado-xs);
+      padding: var(--espaciado-md);
     }
 
     .fondo ~ .pie-contacto {
@@ -773,16 +799,22 @@
 
 /* Tarifas */
 .pagina-tarifas {
-  padding: 0 clamp(16px, 4vw, 40px);
+  padding: 0 clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
+}
+
+.pagina-tarifas main {
+  width: min(100%, 72rem);
+  max-width: 72rem;
+  margin-inline: auto;
 }
 
 .encabezado-tarifas {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin: 24px 0;
-  padding: 24px clamp(18px, 4vw, 36px);
+  gap: var(--espaciado-md);
+  margin: var(--espaciado-lg) 0;
+  padding: var(--espaciado-lg) clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
   border: 1px solid var(--crema);
   border-radius: 20px;
   background-color: var(--naranja-pedal);
@@ -805,21 +837,21 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   align-items: start;
-  gap: 16px;
-  margin: 24px 0;
+  gap: var(--espaciado-md);
+  margin: var(--espaciado-lg) 0;
 }
 
 .tarifa-card {
   min-width: 0;
-  padding: 16px;
+  padding: var(--espaciado-md);
   border: 1px solid var(--borde-suave);
-  border-radius: 16px;
+  border-radius: var(--espaciado-md);
   background-color: var(--crema);
   box-shadow: 0 8px 24px var(--sombra-color);
 }
 
 .tarifa-card h2 {
-  margin: 0 0 16px;
+  margin: 0 0 var(--espaciado-md);
   text-align: center;
 }
 
@@ -829,34 +861,35 @@
 }
 
 .tarifa-card caption {
-  margin-bottom: 12px;
+  margin-bottom: var(--espaciado-sm);
   text-align: center;
 }
 
 .tarifa-card th,
 .tarifa-card td {
-  padding: 8px;
+  padding: var(--espaciado-sm);
   border: 1px solid var(--borde-suave);
   text-align: left;
 }
 
 .tarifa-card th {
-  background-color: var(--crema);
+  background-color: var(--verde-ruta);
+  color: var(--blanco);
 }
 
 .categoria-bicicletas {
   width: 100%;
-  max-width: 1100px;
-  margin: 24px auto;
-  padding: 16px;
+  max-width: 68rem;
+  margin: var(--espaciado-lg) auto;
+  padding: var(--espaciado-md);
   border: 1px solid var(--borde-suave);
-  border-radius: 16px;
+  border-radius: var(--espaciado-md);
   background-color: var(--crema);
   box-shadow: 0 8px 24px var(--sombra-color);
 }
 
 .categoria-bicicletas h2 {
-  margin: 0 0 16px;
+  margin: 0 0 var(--espaciado-md);
   text-align: center;
 }
 
@@ -865,17 +898,17 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  gap: 16px;
-  padding: 4px 4px 12px;
+  gap: var(--espaciado-md);
+  padding: var(--espaciado-xs) var(--espaciado-xs) var(--espaciado-sm);
   list-style: none;
 }
 
 .bicicleta-card {
-  flex: 1 1 calc((100% - 32px) / 3);
+  flex: 1 1 calc((100% - 2rem) / 3);
   min-width: 0;
   overflow: hidden;
   margin: 0;
-  border-radius: 12px;
+  border-radius: var(--espaciado-sm);
   background-color: var(--crema);
   box-shadow: 0 4px 16px var(--sombra-color);
 }
@@ -883,14 +916,14 @@
 .bicicleta-card img {
   display: block;
   width: 100%;
-  height: 240px;
+  height: 15rem;
   object-fit: contain;
   background-color: var(--crema);
 }
 
 @media (max-width: 700px) {
   .bicicleta-card {
-    flex-basis: calc((100% - 16px) / 2);
+    flex-basis: calc((100% - var(--espaciado-md)) / 2);
   }
 }
 
@@ -901,10 +934,10 @@
 }
 
 .aviso-recorridos {
-  margin: 16px 0 24px;
-  padding: 12px 16px;
+  margin: var(--espaciado-md) 0 var(--espaciado-lg);
+  padding: var(--espaciado-sm) var(--espaciado-md);
   border: 1px solid var(--borde-suave);
-  border-radius: 10px;
+  border-radius: var(--espaciado-sm);
   background-color: var(--naranja-pedal);
   color: var(--azul-noche);
   line-height: 1.5;
@@ -915,16 +948,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 28px;
-  margin-top: 8px;
-  padding-left: 20px;
+  gap: var(--espaciado-xs) var(--espaciado-lg);
+  margin-top: var(--espaciado-xs);
+  padding-left: var(--espaciado-md);
   text-align: left;
 }
 
 .boton-inicio {
   display: inline-block;
   flex-shrink: 0;
-  padding: 10px 16px;
+  padding: var(--espaciado-sm) var(--espaciado-md);
   border: 1px solid var(--verde-ruta);
   border-radius: 8px;
   background-color: var(--verde-ruta);
@@ -983,7 +1016,7 @@
   .pagina-tarifas .pie-contacto {
     flex-direction: column;
     align-items: flex-start;
-    padding: 18px;
+    padding: var(--espaciado-md);
   }
 
   .pagina-tarifas .pie-contacto p {

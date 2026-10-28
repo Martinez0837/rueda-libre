@@ -199,3 +199,24 @@ Estados de navegación, enlaces y foco (2026-10-27)
   botones y leyendo sus estilos computados en el navegador. No se manipuló el
   panel DevTools :hov; la causa de cascada se documentó mediante el cálculo de
   especificidad de las reglas.
+
+Box model y espaciado (2026-10-28)
+- Se extendió box-sizing: border-box a todos los elementos y pseudoelementos.
+  Así, width incluye contenido, relleno y borde. El contenido principal queda
+  centrado y limitado a 72rem; la página de reserva conserva un ancho máximo
+  más estrecho. La portada tiene min-height: 40vh.
+- Los servicios se separan en tarjetas con relleno, borde, esquinas redondeadas
+  y espacio entre tarjetas. Las imágenes usan width: 100% y quedan dentro de su
+  tarjeta. La navegación muestra sus opciones en una fila.
+- Las tablas tienen relleno de 0.75rem en las celdas, bordes y encabezados Verde
+  Ruta con texto blanco (contraste 5.31:1). Los grupos, etiquetas, campos y botón
+  del formulario usan la escala de espaciado en rem; etiquetas y controles quedan
+  apilados y los campos ocupan el ancho disponible.
+- Medición del box model de una tarjeta de servicio con los valores calculados
+  del navegador (ancho CSS de prueba 20rem, relleno existente de 0.75rem por
+  lado y borde de 1px por lado): con box-sizing: content-box el ancho exterior
+  fue 346px; con border-box fue 320px. La diferencia corresponde al relleno y
+  los dos bordes (26px).
+- Verificación en navegador a 1366px y 390px: todos los elementos computan
+  border-box, los principales quedan centrados y limitados, la navegación no
+  produce desbordamiento horizontal y ninguna imagen de tarjeta sale de ella.
