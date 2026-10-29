@@ -296,7 +296,7 @@ button {
 
   #navbar .navbar-links {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: var(--espaciado-xs);
     text-align: right;
     list-style: none;
@@ -679,18 +679,24 @@ button {
   .pie-contacto {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: var(--espaciado-md);
-    width: min(100% - 2rem, 72rem);
     margin: var(--espaciado-xl) auto var(--espaciado-md);
     padding: var(--espaciado-lg);
     border: 1px solid var(--borde-suave);
     border-radius: var(--espaciado-md);
-    background-color: var(--crema);
+    background-color: var(--gris-asfalto);
     box-shadow: 0 8px 24px var(--sombra-color);
+    color: var(--blanco);
   }
 
+.pie-contacto dl dd a{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--blanco);
+  }
   .fondo ~ .pie-contacto {
     justify-self: center;
     width: min(100% - 2rem, 72rem);

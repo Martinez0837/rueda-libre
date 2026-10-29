@@ -296,3 +296,6 @@ Qué mejoraría en la siguiente iteración
   enlaces y recursos una vez publicada la versión definitiva.
 - Mantener una bitácora por reto y registrar la URL, pruebas de producción y
   decisiones de cada lanzamiento.
+
+
+  Que pasa cuando estrecho la ventana de la pagina, pues el contenido se organiza conforme al tamaño de la ventana.
