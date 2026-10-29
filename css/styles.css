@@ -12,7 +12,7 @@
 
   --espaciado-xs: 0.5rem;
   --espaciado-sm: 0.75rem;
-  --espaciado-md: 1 rem;
+  --espaciado-md: 1rem;
   --espaciado-lg: 1.5rem;
   --espaciado-xl: 2rem;
 
@@ -463,6 +463,62 @@ button {
     text-align: center;
   }
 
+  .flota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: var(--espaciado-lg);
+  }
+
+  .bicicleta-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: var(--espaciado-md);
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--espaciado-md);
+    background-color: var(--crema);
+    box-shadow: 0 8px 24px var(--sombra-color);
+  }
+
+  .bicicleta-card > img {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    margin-bottom: var(--espaciado-md);
+    border-radius: var(--espaciado-sm);
+    object-fit: cover;
+  }
+
+  .bicicleta-card h3 {
+    margin-bottom: var(--espaciado-xs);
+    color: var(--azul-noche);
+  }
+
+  .bicicleta-descripcion {
+    flex-grow: 1;
+    margin-bottom: var(--espaciado-md);
+    color: var(--gris-asfalto);
+    line-height: 1.6;
+  }
+
+  .bicicleta-precio {
+    margin-bottom: var(--espaciado-md);
+    color: var(--azul-noche);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .bicicleta-precio span {
+    color: var(--gris-asfalto);
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  .bicicleta-card .boton-reservar {
+    margin-top: auto;
+  }
+
   .servicios-intro {
     display: flex;
     flex-direction: column;
@@ -515,6 +571,7 @@ button {
     align-self: center;
     padding: var(--espaciado-sm) var(--espaciado-md);
     border-radius: 8px;
+    margin-bottom: 6px;
     background-color: var(--verde-ruta);
     color: var(--blanco);
     text-align: center;

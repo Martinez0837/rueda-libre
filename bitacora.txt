@@ -299,3 +299,22 @@ Qué mejoraría en la siguiente iteración
 
 
   Que pasa cuando estrecho la ventana de la pagina, pues el contenido se organiza conforme al tamaño de la ventana.
+
+Nuestra flota adaptable (2026-10-29)
+- Se añadió en Inicio la sección «Nuestra flota» con siete artículos: Urbana
+  Clásica, Urbana Plegable, Montaña Trail, Gravel Aventura, Eléctrica Urbana,
+  Infantil y Tándem. Cada tarjeta incluye imagen, descripción, precio por hora
+  y enlace «Reservar» hacia el formulario de reservas.
+- La cuadrícula usa Grid con repeat(auto-fit, minmax(min(100%, 15rem), 1fr)) y
+  una separación uniforme, sin media queries propias. Las tarjetas conservan
+  relleno, borde y esquinas redondeadas; Flexbox en columna distribuye el
+  contenido y mantiene los enlaces al final de las tarjetas de cada fila.
+- El box model computado de las tarjetas se verificó con 16 px de relleno, 1 px
+  de borde y esquinas de 12 px. Se corrigió --espaciado-md a 1rem para que el
+  espaciado definido se aplique correctamente.
+- Comprobación responsiva en navegador con viewports de 1280 px, 900 px y
+  500 px: se observaron respectivamente 4, 3 y 1 columnas. Las siete imágenes
+  cargaron y, en cada fila, las tarjetas tuvieron igual altura y sus enlaces
+  quedaron alineados.
+- La comprobación se hizo ajustando el viewport del navegador; no se registró
+  una sesión manual con la barra de modo dispositivo de DevTools.
