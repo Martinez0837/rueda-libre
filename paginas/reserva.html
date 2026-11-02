@@ -26,122 +26,134 @@
         </ul>
       </div>
     </nav>
-  <main class="isla">
+  <main class="reserva-layout">
 
-    <header class="encabezado-pagina encabezado-reserva">
-      <h1>Reserva tu bicicleta</h1>
-      <p class="intro">Completa tus datos, elige tu alquiler y confirma la solicitud.</p>
-    </header>
+    <section class="isla">
+      <header class="encabezado-pagina encabezado-reserva">
+        <h1>Reserva tu bicicleta</h1>
+        <p class="intro">Completa tus datos, elige tu alquiler y confirma la solicitud.</p>
+      </header>
 
-    <section class="formulario-reserva" aria-labelledby="titulo-formulario-reserva">
-      <h2 id="titulo-formulario-reserva">Formulario de reserva</h2>
-      <form action="#" method="post">
-        <fieldset class="grupo-reserva">
-          <legend>Tus datos</legend>
+      <section class="formulario-reserva" aria-labelledby="titulo-formulario-reserva">
+        <h2 id="titulo-formulario-reserva">Formulario de reserva</h2>
+        <form action="#" method="post">
+          <fieldset class="grupo-reserva">
+            <legend>Tus datos</legend>
 
-          <div class="campo">
-            <label for="nombre">Nombre completo</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Andrea García López" minlength="3" required>
-          </div>
-
-          <div class="campo">
-            <label for="documento">Número de documento</label>
-            <input id="documento" name="documento" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{6,10}" title="Ingresa solo números: entre 6 y 10 dígitos." aria-describedby="ayuda-documento" required>
-            <small class="ayuda-campo" id="ayuda-documento">Solo números, entre 6 y 10 dígitos.</small>
-          </div>
-
-          <div class="campo">
-            <label for="correo">Correo electrónico</label>
-            <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required>
-          </div>
-
-          <div class="campo">
-            <label for="celular">Celular</label>
-            <input id="celular" name="celular" type="tel" inputmode="numeric" autocomplete="tel" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3 (ejemplo: 3001234567)." aria-describedby="ayuda-celular" required>
-            <small class="ayuda-campo" id="ayuda-celular">10 dígitos, debe empezar por 3. Ejemplo: 3001234567.</small>
-          </div>
-        </fieldset>
-
-        <fieldset class="grupo-reserva">
-          <legend>Tu alquiler</legend>
-
-          <div class="campo">
-            <label for="fecha">Fecha del alquiler</label>
-            <input id="fecha" name="fecha" type="date" min="2026-11-01" max="2026-12-31" required>
-          </div>
-
-          <div class="campo">
-            <span class="etiqueta-campo" id="etiqueta-tipo-bicicleta">Tipo de bicicleta</span>
-            <div class="opciones-reserva" role="radiogroup" aria-labelledby="etiqueta-tipo-bicicleta">
-              <label class="opcion-reserva" for="bicicleta-urbana">
-                <input id="bicicleta-urbana" name="tipo_bicicleta" type="radio" value="urbana" required>
-                Urbana
-              </label>
-              <label class="opcion-reserva" for="bicicleta-montana">
-                <input id="bicicleta-montana" name="tipo_bicicleta" type="radio" value="montana">
-                Montaña
-              </label>
-              <label class="opcion-reserva" for="bicicleta-electrica">
-                <input id="bicicleta-electrica" name="tipo_bicicleta" type="radio" value="electrica">
-                Eléctrica
-              </label>
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. Andrea García López" minlength="3" required>
             </div>
-          </div>
 
-          <div class="campo">
-            <label for="plan">Plan</label>
-            <select id="plan" name="plan" required>
-              <option value="" selected disabled>Selecciona un plan</option>
-              <option value="1-hora">1 hora</option>
-              <option value="medio-dia">Medio día</option>
-              <option value="dia-completo">Día completo</option>
-            </select>
-          </div>
+            <div class="fila-campos">
+              <div class="campo">
+                <label for="documento">Número de documento</label>
+                <input id="documento" name="documento" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{6,10}" title="Ingresa solo números: entre 6 y 10 dígitos." aria-describedby="ayuda-documento" required>
+                <small class="ayuda-campo" id="ayuda-documento">Solo números, entre 6 y 10 dígitos.</small>
+              </div>
 
-          <div class="campo">
-            <label for="cantidad">Cantidad de bicicletas</label>
-            <input id="cantidad" name="cantidad" type="number" min="1" max="6" step="1" value="1" required>
-          </div>
+              <div class="campo">
+                <label for="celular">Celular</label>
+                <input id="celular" name="celular" type="tel" inputmode="numeric" autocomplete="tel" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3 (ejemplo: 3001234567)." aria-describedby="ayuda-celular" required>
+                <small class="ayuda-campo" id="ayuda-celular">10 dígitos, debe empezar por 3. Ejemplo: 3001234567.</small>
+              </div>
+            </div>
 
-          <div class="campo">
-            <label for="recorrido">Recorrido guiado</label>
-            <select id="recorrido" name="recorrido" required>
-              <option value="ninguno" selected>Ninguno</option>
-              <option value="rio-y-parques">Río y parques</option>
-              <option value="sabores-de-barrio">Sabores de barrio</option>
-              <option value="reto-las-palmas">Reto Las Palmas</option>
-            </select>
-          </div>
+            <div class="campo">
+              <label for="correo">Correo electrónico</label>
+              <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+            </div>
+          </fieldset>
 
-          <div class="campo">
-            <label for="comentarios">Comentarios</label>
-            <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
-          </div>
-        </fieldset>
+          <fieldset class="grupo-reserva">
+            <legend>Tu alquiler</legend>
 
-        <fieldset class="grupo-reserva">
-          <legend>Confirmación</legend>
-          <label class="opcion-reserva" for="acepta-politicas">
-            <input id="acepta-politicas" name="acepta_politicas" type="checkbox" required>
-            Acepto las políticas de alquiler
-          </label>
-        </fieldset>
+            <div class="campo">
+              <label for="fecha">Fecha del alquiler</label>
+              <input id="fecha" name="fecha" type="date" min="2026-11-01" max="2026-12-31" required>
+            </div>
 
-        <button type="submit">Solicitar reserva</button>
-      </form>
+            <div class="campo">
+              <span class="etiqueta-campo" id="etiqueta-tipo-bicicleta">Tipo de bicicleta</span>
+              <div class="opciones-reserva" role="radiogroup" aria-labelledby="etiqueta-tipo-bicicleta">
+                <label class="opcion-reserva" for="bicicleta-urbana">
+                  <input id="bicicleta-urbana" name="tipo_bicicleta" type="radio" value="urbana" required>
+                  Urbana
+                </label>
+                <label class="opcion-reserva" for="bicicleta-montana">
+                  <input id="bicicleta-montana" name="tipo_bicicleta" type="radio" value="montana">
+                  Montaña
+                </label>
+                <label class="opcion-reserva" for="bicicleta-electrica">
+                  <input id="bicicleta-electrica" name="tipo_bicicleta" type="radio" value="electrica">
+                  Eléctrica
+                </label>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="plan">Plan</label>
+              <select id="plan" name="plan" required>
+                <option value="" selected disabled>Selecciona un plan</option>
+                <option value="1-hora">1 hora</option>
+                <option value="medio-dia">Medio día</option>
+                <option value="dia-completo">Día completo</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="cantidad">Cantidad de bicicletas</label>
+              <input id="cantidad" name="cantidad" type="number" min="1" max="6" step="1" value="1" required>
+            </div>
+
+            <div class="campo">
+              <label for="recorrido">Recorrido guiado</label>
+              <select id="recorrido" name="recorrido" required>
+                <option value="ninguno" selected>Ninguno</option>
+                <option value="rio-y-parques">Río y parques</option>
+                <option value="sabores-de-barrio">Sabores de barrio</option>
+                <option value="reto-las-palmas">Reto Las Palmas</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="comentarios">Comentarios</label>
+              <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="grupo-reserva">
+            <legend>Confirmación</legend>
+            <label class="opcion-reserva" for="acepta-politicas">
+              <input id="acepta-politicas" name="acepta_politicas" type="checkbox" required>
+              Acepto las políticas de alquiler
+            </label>
+          </fieldset>
+
+          <button type="submit">Solicitar reserva</button>
+        </form>
+      </section>
+      <p class="nota">Usaremos tus datos únicamente para gestionar tu reserva.</p>
     </section>
-    <p class="nota">Usaremos tus datos únicamente para gestionar tu reserva.</p>
+
+    <aside class="contenido-card contacto-reserva" aria-labelledby="titulo-contacto-reserva">
+      <h2 id="titulo-contacto-reserva">Información de contacto</h2>
+      <p>¿Tienes dudas sobre tu reserva? Estamos aquí para ayudarte.</p>
+      <dl>
+        <dt>Correo</dt>
+        <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></dd>
+        <dt>Horario de atención</dt>
+        <dd>De lunes a viernes, de 7:00 a. m. a 5:00 p. m.</dd>
+      </dl>
+    </aside>
 
   </main>
 
    <footer class="pie-contacto">
-      <dl>
-        <dt>Contacto</dt>
-        <dd>¿Dudas? Escríbenos a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</dd>
-      </dl>
       <p>&copy; 2026 Rueda Libre. Todos los derechos reservados. Riwi.</p>
-      <dt id="titulo-horario-atencion">Horario de atención</dt>
-      <dd>De lunes a viernes, de 7:00 a. m. a 5:00 p. m.</dd>
+      <p>Medellín, Antioquia</p>
     </footer>
 
     <a class="whatsapp-fijo" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>

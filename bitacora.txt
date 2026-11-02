@@ -318,3 +318,22 @@ Nuestra flota adaptable (2026-10-29)
   quedaron alineados.
 - La comprobación se hizo ajustando el viewport del navegador; no se registró
   una sesión manual con la barra de modo dispositivo de DevTools.
+
+Layouts con Grid y Flexbox (2026-11-02)
+
+| Caso | Layout elegido | Criterio |
+|---|---|---|
+| Portada de Inicio | Grid, dos columnas `1fr` | Texto e imagen ocupan dos áreas en una misma fila; Flexbox con `justify-content: center` centra verticalmente el bloque de texto. En móvil pasa a una columna. |
+| Galería «Nuestras rutas» | Grid, tres columnas `1fr` | Las tarjetas forman una matriz con columnas y filas; Grid mantiene las tres rutas alineadas y usa `gap` uniforme. En móvil se apilan. |
+| Formulario y contacto en Reservas | Grid, columnas `2fr` y `1fr` | Son dos áreas principales con proporción distinta; Grid define la relación 2:1 y en móvil las apila. |
+| Fila de documento y celular | Flexbox | Solo se necesita ordenar dos campos en una dimensión; `gap` los separa y en móvil se apilan. |
+| Encabezado / navegación | Flexbox | Marca y menú se distribuyen en un eje horizontal con `justify-content`, `align-items` y `gap`; en móvil cambian a columna. |
+| Pie de página | Flexbox | Copyright y ubicación se alinean en una fila con separación; en móvil se organizan en columna. |
+
+- En Inicio, la portada quedó con texto a la izquierda e imagen a la derecha;
+  la galería muestra Río y parques (Fácil), Sabores de barrio (Medio) y Reto
+  Las Palmas (Difícil).
+- En Reservas, el formulario conserva sus campos y restricciones de validación;
+  la información de contacto ocupa la columna derecha en escritorio. La
+  navegación mantiene su enlace de página actual y la flota de Inicio sigue
+  generándose con la cuadrícula existente.

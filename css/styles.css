@@ -81,20 +81,53 @@ body {
   .fondo {
     margin: 0;
     min-height: 100vh;
-    display: grid;
-    place-items: center;
     padding: var(--espaciado-lg);
     background-color: var(--crema);
   }
 
   .isla {
-    width: min(100%, 30rem);
+    width: 100%;
     padding: var(--espaciado-xl);
     border: 1px solid var(--crema);
     border-radius: 1.75rem;
     background: var(--crema);
     box-shadow: 0 24px 70px var(--sombra-color);
     backdrop-filter: blur(12px);
+  }
+
+  .reserva-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: var(--espaciado-lg);
+  }
+
+  .contacto-reserva dl {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: var(--espaciado-xs) var(--espaciado-md);
+    margin-top: var(--espaciado-lg);
+  }
+
+  .contacto-reserva dd {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .contacto-reserva a {
+    color: var(--verde-ruta);
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .fila-campos {
+    display: flex;
+    gap: var(--espaciado-md);
+  }
+
+  .fila-campos .campo {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   h1 {
@@ -406,10 +439,37 @@ button {
   }
 
   .bienvenida {
-    min-height: 20vh;
+    min-height: 15vh;
     margin-bottom: var(--espaciado-md);
     font-size: clamp(1.3rem, 3vw, 1.8rem);
     font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: var(--espaciado-xl);
+    text-align: left;
+  }
+
+  .bienvenida-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--espaciado-md);
+  }
+
+  .bienvenida-contenido .boton-inicio {
+    margin-top: var(--espaciado-sm);
+  }
+
+  .bienvenida-imagen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 16rem;
+    max-height: 24rem;
+    border-radius: var(--espaciado-md);
+    object-fit: cover;
   }
 
   .encabezado-pagina h1 {
@@ -469,7 +529,7 @@ button {
     gap: var(--espaciado-lg);
   }
 
-  .bicicleta-card {
+  .flota-grid > .bicicleta-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -481,7 +541,7 @@ button {
     box-shadow: 0 8px 24px var(--sombra-color);
   }
 
-  .bicicleta-card > img {
+  .flota-grid > .bicicleta-card > img {
     display: block;
     width: 100%;
     height: 12rem;
@@ -490,33 +550,68 @@ button {
     object-fit: cover;
   }
 
-  .bicicleta-card h3 {
+  .flota-grid > .bicicleta-card h3 {
     margin-bottom: var(--espaciado-xs);
     color: var(--azul-noche);
   }
 
-  .bicicleta-descripcion {
+  .flota-grid > .bicicleta-card .bicicleta-descripcion {
     flex-grow: 1;
     margin-bottom: var(--espaciado-md);
     color: var(--gris-asfalto);
     line-height: 1.6;
   }
 
-  .bicicleta-precio {
+  .flota-grid > .bicicleta-card .bicicleta-precio {
     margin-bottom: var(--espaciado-md);
     color: var(--azul-noche);
     font-size: 1.2rem;
     font-weight: 600;
   }
 
-  .bicicleta-precio span {
+  .flota-grid > .bicicleta-card .bicicleta-precio span {
     color: var(--gris-asfalto);
     font-size: 0.875rem;
     font-weight: 400;
   }
 
-  .bicicleta-card .boton-reservar {
+  .flota-grid > .bicicleta-card .boton-reservar {
     margin-top: auto;
+  }
+
+  .rutas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: var(--espaciado-lg);
+  }
+
+  .ruta-card {
+    overflow: hidden;
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--espaciado-md);
+    background-color: var(--crema);
+    box-shadow: 0 8px 24px var(--sombra-color);
+  }
+
+  .ruta-card > img {
+    display: block;
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+  }
+
+  .ruta-contenido {
+    padding: var(--espaciado-md);
+  }
+
+  .ruta-contenido h3 {
+    margin-bottom: var(--espaciado-xs);
+    color: var(--azul-noche);
+  }
+
+  .ruta-contenido p {
+    color: var(--gris-asfalto);
   }
 
   .servicios-intro {
@@ -730,14 +825,16 @@ button {
   }
 
   .fondo.pagina-reserva {
+    display: block;
     padding-bottom: 5rem;
   }
 
   .pie-contacto {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     text-align: center;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: var(--espaciado-md);
     margin: var(--espaciado-xl) auto var(--espaciado-md);
@@ -818,8 +915,14 @@ button {
     }
 
     .servicios-grid,
+    .rutas-grid,
     #how-to-rent ol {
       grid-template-columns: 1fr;
+    }
+
+    .fila-campos {
+      flex-direction: column;
+      gap: 0;
     }
 
     .pie-contacto {
@@ -843,6 +946,19 @@ button {
     .presentacion-grid {
       grid-template-columns: minmax(0, 1fr);
       overflow-x: visible;
+    }
+
+    .bienvenida {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .bienvenida-imagen {
+      height: clamp(12rem, 55vw, 22rem);
+      min-height: 0;
+    }
+
+    .reserva-layout {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 
