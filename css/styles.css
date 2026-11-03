@@ -332,15 +332,20 @@ button {
   }
 
   .flota .card,
-  .ruta-card {
+  .rutas .card {
     border-color: var(--borde-suave);
     background-color: var(--crema);
     box-shadow: 0 8px 24px var(--sombra-color);
   }
 
-  .flota .card-img-top {
+  .flota .card-img-top,
+  .rutas .card-img-top {
     height: 12rem;
     object-fit: cover;
+  }
+
+  .rutas .card-img-top {
+    height: 14rem;
   }
 
   .flota .bicicleta-descripcion {
@@ -360,13 +365,43 @@ button {
     font-weight: 400;
   }
 
-  .ruta-card {
+  .carousel-promociones {
     overflow: hidden;
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--espaciado-lg);
+    background-color: var(--crema);
+    box-shadow: 0 8px 24px var(--sombra-color);
   }
 
-  .ruta-card > .ruta-imagen {
-    height: 14rem;
+  .promo-imagen {
+    height: clamp(11rem, 35vw, 20rem);
     object-fit: cover;
+  }
+
+  .promo-contenido {
+    color: var(--azul-noche);
+  }
+
+  .carousel-promociones .carousel-control-prev,
+  .carousel-promociones .carousel-control-next {
+    top: calc(clamp(11rem, 35vw, 20rem) / 2);
+    bottom: auto;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+    background-color: var(--verde-ruta);
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  .carousel-promociones .carousel-control-next {
+    border-radius: 0.75rem 0 0 0.75rem;
+  }
+
+  .carousel-promociones .carousel-control-prev:focus-visible,
+  .carousel-promociones .carousel-control-next:focus-visible {
+    outline: 3px solid var(--azul-noche);
+    outline-offset: -3px;
   }
 
   .servicios-intro {
