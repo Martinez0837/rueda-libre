@@ -323,17 +323,63 @@ Layouts con Grid y Flexbox (2026-11-02)
 
 | Caso | Layout elegido | Criterio |
 |---|---|---|
-| Portada de Inicio | Grid, dos columnas `1fr` | Texto e imagen ocupan dos áreas en una misma fila; Flexbox con `justify-content: center` centra verticalmente el bloque de texto. En móvil pasa a una columna. |
-| Galería «Nuestras rutas» | Grid, tres columnas `1fr` | Las tarjetas forman una matriz con columnas y filas; Grid mantiene las tres rutas alineadas y usa `gap` uniforme. En móvil se apilan. |
+| Portada de Inicio | Grid, una columna en el HTML actual | El HTML actual solo contiene título y párrafo; no se fuerzan dos columnas sin una imagen. |
+| Galería «Nuestras rutas» | Grid, una columna móvil y tres desde 768 px | Es una matriz de tarjetas con `gap`; las reglas están listas, pero la sección no está presente en el HTML actual. |
 | Formulario y contacto en Reservas | Grid, columnas `2fr` y `1fr` | Son dos áreas principales con proporción distinta; Grid define la relación 2:1 y en móvil las apila. |
 | Fila de documento y celular | Flexbox | Solo se necesita ordenar dos campos en una dimensión; `gap` los separa y en móvil se apilan. |
 | Encabezado / navegación | Flexbox | Marca y menú se distribuyen en un eje horizontal con `justify-content`, `align-items` y `gap`; en móvil cambian a columna. |
 | Pie de página | Flexbox | Copyright y ubicación se alinean en una fila con separación; en móvil se organizan en columna. |
 
-- En Inicio, la portada quedó con texto a la izquierda e imagen a la derecha;
-  la galería muestra Río y parques (Fácil), Sabores de barrio (Medio) y Reto
-  Las Palmas (Difícil).
+- En Inicio, el HTML actual no incluye una imagen en la portada ni la sección
+  `.rutas-grid`; por eso no se pueden afirmar esos elementos como visibles o
+  probados, aunque sus estilos estén definidos.
 - En Reservas, el formulario conserva sus campos y restricciones de validación;
   la información de contacto ocupa la columna derecha en escritorio. La
   navegación mantiene su enlace de página actual y la flota de Inicio sigue
   generándose con la cuadrícula existente.
+
+Diseño responsive mobile-first (2026-11-02)
+- styles.css usa como base móvil una columna para presentación, reservas,
+  galerías y listas de tarjetas. Las distribuciones de tablet se activan con
+  `@media (min-width: 768px)` y las de escritorio con
+  `@media (min-width: 1200px)`.
+- Encabezado y pie: en móvil el nombre/marca aparece arriba del menú centrado y
+  el pie queda en columna; desde 768 px ambos recuperan la disposición
+  horizontal. Portada y galerías se apilan en móvil; las reglas preparan tres
+  columnas para la galería desde tablet, pero `.rutas-grid` no está presente en
+  el HTML actual de Inicio. Reservas conserva una columna hasta escritorio,
+  donde el formulario y contacto usan una relación de 2fr a 1fr.
+- Flota: la cuadrícula adaptable mostró 1 columna a 360 px, 2 a 768 px y 4 a
+  1280 px. La cantidad se ajusta con auto-fit según el espacio disponible.
+- Problemas responsive encontrados y solución:
+  1. La presentación partía de tres columnas y tenía overflow horizontal;
+     ahora la base es una columna y solo vuelve a tres en escritorio.
+  2. La reserva partía de una proporción 2:1, estrecha para pantallas pequeñas;
+     ahora se apila hasta 1200 px y recupera 2:1 en escritorio.
+  3. Las tablas de tarifas permitían desplazamiento horizontal hasta 520 px;
+     ahora usan layout fijo, celdas que ajustan el texto y menor relleno/tamaño
+     móvil, sin desbordamiento de tabla.
+  4. La regla de ancho máximo cubría imágenes dentro de main, pero no todas las
+     imágenes de la página; ahora `img` tiene ancho máximo 100% y altura
+     automática globalmente.
+  5. El acceso fijo a WhatsApp se superponía a contenido en la vista móvil;
+     ahora aparece después del pie en móvil y se fija de nuevo desde 768 px.
+- Verificación en navegador con viewports de 360, 768 y 1280 px en Inicio,
+  Tarifas y Reservas: no hubo desbordamiento horizontal del documento; todas
+  las imágenes quedaron dentro de sus contenedores y las dos tablas cupieron
+  sin scroll lateral a 360 px; las celdas móviles computaron 12 px de texto y
+  3.2 px 1.6 px de relleno. La navegación y el pie cambiaron de columna a fila
+  en 768 px; la reserva cambió de una columna a 2:1 en 1200 px.
+- La portada se mantuvo en una columna porque el HTML actual solo tiene título
+  y texto; no contiene la imagen necesaria para una composición de dos
+  columnas. Tampoco se validó visualmente la galería de rutas al faltar su
+  markup.
+- Se comprobó el formulario: vacío sigue siendo inválido, datos válidos pasan
+  checkValidity() y un documento con letras sigue bloqueado por pattern. La
+  fila de documento/celular se apila en móvil.
+- Estas comprobaciones usaron viewports del navegador; no se registró una
+  sesión manual con el modo dispositivo de DevTools ni una prueba en celular
+  físico.
+- Publicación de GitHub Pages v1.5 pendiente: este clon no tiene remoto Git
+  configurado. No se inventó ni publicó una URL; la comprobación en un celular
+  real también queda pendiente.

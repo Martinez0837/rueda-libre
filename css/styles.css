@@ -27,6 +27,12 @@ main {
   margin-inline: auto;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 *,
 *::before,
 *::after {
@@ -81,13 +87,14 @@ body {
   .fondo {
     margin: 0;
     min-height: 100vh;
-    padding: var(--espaciado-lg);
+    padding: var(--espaciado-sm);
     background-color: var(--crema);
   }
 
   .isla {
     width: 100%;
-    padding: var(--espaciado-xl);
+    min-width: 0;
+    padding: var(--espaciado-md);
     border: 1px solid var(--crema);
     border-radius: 1.75rem;
     background: var(--crema);
@@ -97,14 +104,14 @@ body {
 
   .reserva-layout {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
-    gap: var(--espaciado-lg);
+    gap: var(--espaciado-md);
   }
 
   .contacto-reserva dl {
     display: grid;
-    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--espaciado-xs) var(--espaciado-md);
     margin-top: var(--espaciado-lg);
   }
@@ -122,7 +129,8 @@ body {
 
   .fila-campos {
     display: flex;
-    gap: var(--espaciado-md);
+    flex-direction: column;
+    gap: 0;
   }
 
   .fila-campos .campo {
@@ -283,22 +291,14 @@ button {
     text-align: center;
   }
 
-  @media (max-width: 480px) {
-
-    .isla {
-
-      padding: var(--espaciado-lg) var(--espaciado-md);
-
-    }
-
-  }
 /* Navegación compartida */
 
   #navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--espaciado-lg);
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--espaciado-sm);
     width: 100%;
     margin: 0;
     padding: 0;
@@ -330,8 +330,9 @@ button {
   #navbar .navbar-links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--espaciado-xs);
-    text-align: right;
+    text-align: center;
     list-style: none;
     padding: 0;
   }
@@ -352,11 +353,6 @@ button {
     width: 75px;
     height: 68px;
     object-fit: contain;
-  }
-
-  main img {
-    max-width: 100%;
-    height: auto;
   }
 
   #navbar .navbar-links a {
@@ -444,17 +440,17 @@ button {
     font-size: clamp(1.3rem, 3vw, 1.8rem);
     font-weight: 600;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    gap: var(--espaciado-xl);
-    text-align: left;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: var(--espaciado-md);
+    text-align: center;
   }
 
   .bienvenida-contenido {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--espaciado-md);
   }
 
@@ -463,11 +459,8 @@ button {
   }
 
   .bienvenida-imagen {
-    display: block;
     width: 100%;
-    height: 100%;
-    min-height: 16rem;
-    max-height: 24rem;
+    height: clamp(12rem, 55vw, 22rem);
     border-radius: var(--espaciado-md);
     object-fit: cover;
   }
@@ -502,11 +495,9 @@ button {
 
   .presentacion-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(210px, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: var(--espaciado-md);
-    overflow-x: auto;
-    padding-bottom: var(--espaciado-sm);
   }
 
   .contenido-card {
@@ -581,7 +572,7 @@ button {
 
   .rutas-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: var(--espaciado-lg);
   }
@@ -731,7 +722,7 @@ button {
 
   .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: var(--espaciado-md);
   }
@@ -777,7 +768,7 @@ button {
 
   #how-to-rent ol {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 12px;
     list-style-position: inside;
     counter-reset: pasos;
@@ -821,22 +812,23 @@ button {
 
 /* Footer compartido y acceso fijo a WhatsApp */
   body:not(.fondo) {
-    padding-bottom: 5rem;
+    padding-bottom: var(--espaciado-sm);
   }
 
   .fondo.pagina-reserva {
     display: block;
-    padding-bottom: 5rem;
+    padding-bottom: var(--espaciado-sm);
   }
 
   .pie-contacto {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: var(--espaciado-md);
+    width: min(100% - 2rem, 72rem);
     margin: var(--espaciado-xl) auto var(--espaciado-md);
     padding: var(--espaciado-lg);
     border: 1px solid var(--borde-suave);
@@ -847,15 +839,14 @@ button {
   }
 
 .pie-contacto dl dd a{
-  text-decoration: none;
+  text-decoration: none
   font-weight: bold;
   color: var(--blanco);
   }
-  .fondo ~ .pie-contacto {
-    justify-self: center;
-    width: min(100% - 2rem, 72rem);
-    margin-inline: 0;
-  }
+
+.pie-contacto .horario-footer {
+  text-align: left;
+}
 
   .pie-contacto dd {
     margin-top: var(--espaciado-xs);
@@ -867,11 +858,9 @@ button {
   }
 
   .whatsapp-fijo {
-    position: fixed;
-    right: var(--espaciado-md);
-    bottom: var(--espaciado-md);
-    z-index: 10;
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: var(--espaciado-md) auto;
     padding: var(--espaciado-sm) var(--espaciado-md);
     border: 1px solid var(--verde-ruta);
     border-radius: 999px;
@@ -892,76 +881,6 @@ button {
     outline-offset: 3px;
   }
 
-/* Ajustes responsive compartidos */
-@media (max-width: 600px) {
-    #navbar {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: var(--espaciado-sm);
-    }
-
-    #navbar .navbar-links {
-      justify-content: flex-start;
-      text-align: left;
-    }
-
-    #navbar .navbar-links a {
-      padding: var(--espaciado-xs);
-    }
-
-    .bienvenida {
-      margin-top: var(--espaciado-md);
-      padding: var(--espaciado-lg) var(--espaciado-md);
-    }
-
-    .servicios-grid,
-    .rutas-grid,
-    #how-to-rent ol {
-      grid-template-columns: 1fr;
-    }
-
-    .fila-campos {
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .pie-contacto {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-inline: var(--espaciado-xs);
-      padding: var(--espaciado-md);
-    }
-
-    .fondo ~ .pie-contacto {
-      width: min(100% - 2rem, 72rem);
-      margin-inline: 0;
-    }
-
-    .pie-contacto p {
-      text-align: left;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .presentacion-grid {
-      grid-template-columns: minmax(0, 1fr);
-      overflow-x: visible;
-    }
-
-    .bienvenida {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .bienvenida-imagen {
-      height: clamp(12rem, 55vw, 22rem);
-      min-height: 0;
-    }
-
-    .reserva-layout {
-      grid-template-columns: minmax(0, 1fr);
-    }
-  }
-
 /* Tarifas, tablas y galerías */
 .pagina-tarifas {
   padding: 0 clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
@@ -977,6 +896,10 @@ button {
   text-align: center;
 }
 
+.pagina-tarifas > p:first-of-type img {
+  margin-inline: auto;
+}
+
 .tarifas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
@@ -987,7 +910,7 @@ button {
 
 .tarifa-card {
   min-width: 0;
-  padding: var(--espaciado-md);
+  padding: var(--espaciado-sm);
   border: 1px solid var(--borde-suave);
   border-radius: var(--espaciado-md);
   background-color: var(--crema);
@@ -1001,7 +924,10 @@ button {
 
 .tarifa-card table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
+  font-size: 0.75rem;
+  line-height: 1.25;
 }
 
 .tarifa-card caption {
@@ -1011,9 +937,16 @@ button {
 
 .tarifa-card th,
 .tarifa-card td {
-  padding: var(--espaciado-sm);
+  min-width: 0;
+  padding: 0.2rem 0.1rem;
   border: 1px solid var(--borde-suave);
   text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.tarifa-card th:first-child,
+.tarifa-card td:first-child {
+  width: 30%;
 }
 
 .tarifa-card th {
@@ -1059,17 +992,15 @@ button {
 }
 
 .galeria-bicicletas {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   width: 100%;
-  justify-content: center;
   gap: var(--espaciado-md);
   padding: var(--espaciado-xs) var(--espaciado-xs) var(--espaciado-sm);
   list-style: none;
 }
 
 .bicicleta-card {
-  flex: 1 1 calc((100% - 2rem) / 3);
   min-width: 0;
   overflow: hidden;
   margin: 0;
@@ -1079,23 +1010,10 @@ button {
 }
 
 .bicicleta-card img {
-  display: block;
   width: 100%;
   height: 15rem;
   object-fit: contain;
   background-color: var(--crema);
-}
-
-@media (max-width: 700px) {
-  .bicicleta-card {
-    flex-basis: calc((100% - var(--espaciado-md)) / 2);
-  }
-}
-
-@media (max-width: 480px) {
-  .bicicleta-card {
-    flex-basis: 100%;
-  }
 }
 
 .aviso-recorridos {
@@ -1123,9 +1041,101 @@ button {
   transform: translateY(0);
 }
 
-@media (max-width: 520px) {
-  .tarifa-card {
-    overflow-x: auto;
+@media (min-width: 768px) {
+  body:not(.fondo) {
+    padding-bottom: 5rem;
   }
 
+  .fondo.pagina-reserva {
+    padding-bottom: 5rem;
+  }
+
+  #navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #navbar .navbar-links {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .bienvenida {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--espaciado-xl);
+    text-align: left;
+  }
+
+  .bienvenida-contenido {
+    align-items: flex-start;
+  }
+
+  .bienvenida-imagen {
+    height: clamp(16rem, 30vw, 24rem);
+  }
+
+  .rutas-grid,
+  .galeria-bicicletas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .reserva-layout {
+    gap: var(--espaciado-lg);
+  }
+
+  .isla {
+    padding: var(--espaciado-xl);
+  }
+
+  .contacto-reserva dl {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  .fila-campos {
+    flex-direction: row;
+    gap: var(--espaciado-md);
+  }
+
+  .servicios-grid,
+  #how-to-rent ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pie-contacto {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .whatsapp-fijo {
+    position: fixed;
+    right: var(--espaciado-md);
+    bottom: var(--espaciado-md);
+    z-index: 10;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .presentacion-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .reserva-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .tarifa-card {
+    padding: var(--espaciado-md);
+  }
+
+  .tarifa-card table {
+    font-size: 0.875rem;
+  }
+
+  .tarifa-card th,
+  .tarifa-card td {
+    padding: var(--espaciado-sm);
+  }
 }
