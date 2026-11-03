@@ -1,7 +1,9 @@
 /* Variables de marca y espaciado */
 :root {
   --verde-ruta: #1e7a4f;
+  --verde-ruta-rgb: 30, 122, 79;
   --naranja-pedal: #f39a2b;
+  --naranja-pedal-rgb: 243, 154, 43;
   --azul-noche: #14213d;
   --crema: #faf6ef;
   --gris-asfalto: #5b6470;
@@ -18,6 +20,23 @@
 
   --borde-suave: rgba(91, 100, 112, 0.25);
   --sombra-color: rgba(20, 33, 61, 0.12);
+
+  --bs-primary: var(--verde-ruta);
+  --bs-primary-rgb: var(--verde-ruta-rgb);
+  --bs-body-color: var(--azul-noche);
+  --bs-body-bg: var(--crema);
+  --bs-body-font-family: var(--fuente-texto);
+  --bs-secondary-color: var(--gris-asfalto);
+  --bs-secondary-rgb: 91, 100, 112;
+  --bs-link-color: var(--verde-ruta);
+  --bs-link-color-rgb: var(--verde-ruta-rgb);
+  --bs-link-hover-color: var(--azul-noche);
+  --bs-link-hover-color-rgb: 20, 33, 61;
+  --bs-border-radius: var(--espaciado-sm);
+  --bs-border-radius-sm: var(--espaciado-xs);
+  --bs-border-radius-lg: var(--espaciado-md);
+  --bs-border-radius-xl: var(--espaciado-lg);
+  --bs-border-radius-2xl: var(--espaciado-xl);
 }
 
 /* Base y box model */
@@ -190,9 +209,19 @@ body {
     color: var(--azul-noche);
   }
 
+  .navbar-nav .nav-link .bi {
+    margin-right: var(--espaciado-xs);
+    color: var(--verde-ruta);
+  }
+
   .navbar-nav .nav-link:hover,
   .navbar-nav .nav-link:focus-visible {
     background-color: var(--azul-noche);
+    color: var(--blanco);
+  }
+
+  .navbar-nav .nav-link:hover .bi,
+  .navbar-nav .nav-link:focus-visible .bi {
     color: var(--blanco);
   }
 
@@ -202,6 +231,10 @@ body {
     background-color: var(--naranja-pedal);
     color: var(--azul-noche);
     font-weight: 600;
+  }
+
+  .navbar-nav .nav-link.active .bi {
+    color: var(--azul-noche);
   }
 
   a:not(.navbar-brand):hover {
@@ -226,6 +259,24 @@ body {
     box-shadow: 0 12px 32px var(--sombra-color);
     color: var(--azul-noche);
     text-align: center;
+  }
+
+  .portada-v2 {
+    border-top: 6px solid var(--verde-ruta);
+  }
+
+  .titulo-seccion {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: var(--espaciado-xs);
+    border-bottom: 3px solid var(--verde-ruta);
+    color: var(--azul-noche);
+  }
+
+  .titulo-seccion .bi {
+    margin-right: var(--espaciado-xs);
+    color: var(--verde-ruta);
   }
 
   .bienvenida {
@@ -364,19 +415,22 @@ body {
     line-height: 1.7;
   }
 
-  .ubicacion-card a {
+  .ubicacion-card a:not(.btn) {
     color: var(--verde-ruta);
     font-weight: 600;
     text-underline-offset: 3px;
   }
 
-  .beneficio-titulo {
+  .beneficio-item {
+    border-color: var(--borde-suave);
+  }
+
+  .beneficio-icono {
     color: var(--verde-ruta);
+    font-size: 1.5rem;
   }
 
   .beneficio-dato {
-    background-color: var(--verde-ruta);
-    color: var(--blanco);
     font-weight: 600;
   }
 
@@ -390,7 +444,7 @@ body {
     font-weight: 600;
   }
 
-  .btn-success {
+  .btn-primary {
     --bs-btn-color: var(--blanco);
     --bs-btn-bg: var(--verde-ruta);
     --bs-btn-border-color: var(--verde-ruta);
@@ -400,9 +454,10 @@ body {
     --bs-btn-active-color: var(--blanco);
     --bs-btn-active-bg: var(--azul-noche);
     --bs-btn-active-border-color: var(--azul-noche);
+    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
   }
 
-  .btn-outline-success {
+  .btn-outline-primary {
     --bs-btn-color: var(--verde-ruta);
     --bs-btn-border-color: var(--verde-ruta);
     --bs-btn-hover-color: var(--blanco);
@@ -411,6 +466,31 @@ body {
     --bs-btn-active-color: var(--blanco);
     --bs-btn-active-bg: var(--verde-ruta);
     --bs-btn-active-border-color: var(--verde-ruta);
+    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  }
+
+  .servicios-intro .btn-outline-primary {
+    --bs-btn-color: var(--azul-noche);
+    --bs-btn-border-color: var(--azul-noche);
+    --bs-btn-hover-color: var(--blanco);
+    --bs-btn-hover-bg: var(--azul-noche);
+    --bs-btn-hover-border-color: var(--azul-noche);
+    --bs-btn-active-color: var(--blanco);
+    --bs-btn-active-bg: var(--azul-noche);
+    --bs-btn-active-border-color: var(--azul-noche);
+  }
+
+  .btn-naranja {
+    --bs-btn-color: var(--azul-noche);
+    --bs-btn-bg: var(--naranja-pedal);
+    --bs-btn-border-color: var(--naranja-pedal);
+    --bs-btn-hover-color: var(--blanco);
+    --bs-btn-hover-bg: var(--azul-noche);
+    --bs-btn-hover-border-color: var(--azul-noche);
+    --bs-btn-active-color: var(--blanco);
+    --bs-btn-active-bg: var(--azul-noche);
+    --bs-btn-active-border-color: var(--azul-noche);
+    --bs-btn-focus-shadow-rgb: var(--naranja-pedal-rgb);
   }
 
   .accion-reserva {
@@ -486,9 +566,17 @@ body {
     padding: var(--espaciado-lg);
     border: 1px solid var(--borde-suave);
     border-radius: var(--espaciado-md);
-    background-color: var(--gris-asfalto);
+    background-color: var(--azul-noche);
     box-shadow: 0 8px 24px var(--sombra-color);
     color: var(--blanco);
+  }
+
+  .pie-v2 {
+    border-top: 4px solid var(--naranja-pedal);
+  }
+
+  .pie-v2 .bi {
+    margin-right: var(--espaciado-xs);
   }
 
 .pie-contacto dl dd a{

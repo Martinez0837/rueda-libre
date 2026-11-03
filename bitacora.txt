@@ -489,3 +489,35 @@ Migración de Tarifas y Reservas a Bootstrap 5.3 (2026-11-03)
 - Publicación de v2.0-beta pendiente: este clon no tiene un remoto Git
   configurado. No se publicó ni se inventó una URL de GitHub Pages; tampoco se
   pudo verificar en un celular físico desde este entorno.
+
+Cierre de semana: Rueda Libre v2.0 (2026-11-03)
+- Se personalizó Bootstrap 5.3.8 desde `css/styles.css`, cargada después del
+  framework en las tres páginas. Las variables de marca definen primary y su
+  RGB, tipografía de texto, enlaces, radios y el secundario accesible; los
+  botones primary tienen estados hover/active y se agregó la variante
+  `btn-naranja`.
+- Las clases complementarias `portada-v2`, `titulo-seccion` y `pie-v2`
+  distinguen portada, encabezados y pie sin modificar Bootstrap. Bootstrap
+  Icons se carga por CDN y sus usos decorativos tienen `aria-hidden="true"`;
+  el enlace WhatsApp conserva texto visible.
+- Conflictos resueltos: la utilidad `text-secondary` conservaba el gris
+  predeterminado de Bootstrap y no alcanzaba el contraste en crema; se
+  tematizó `--bs-secondary-rgb`. Los botones `btn-outline-primary` sobre el
+  fondo naranja de servicios ahora usan Azul Noche, legible en reposo y
+  estados activos. No se modificó el archivo del framework ni se usó
+  `!important`.
+- Contraste medido en navegador: Verde Ruta sobre Crema 4,93:1; blanco sobre
+  Verde Ruta 5,31:1; Azul Noche sobre Naranja Pedal 7,20:1; Gris Asfalto sobre
+  Crema 5,56:1; blanco sobre Azul Noche 15,97:1. Las muestras comprobadas
+  superan 4,5:1.
+- Pruebas: las tres páginas cargaron Bootstrap, Bootstrap Icons, `styles.css`
+  y un solo bundle; Open Sans y Montserrat aparecen como fuentes calculadas.
+  No hubo solicitudes fallidas ni atributos `style` o etiquetas `<style>` en
+  las páginas. A 360 y 768 px el menú colapsa; a 1280 px se muestra expandido.
+  Con teclado, Enter abre y cierra el menú, y Tab llega al enlace Inicio.
+- Se guardaron comparativas visuales de Inicio en `img/capturas/antes.jpg` y
+  `img/capturas/despues.jpg` (1280 × 800 CSS px).
+- Publicación: el remoto `origin` está configurado, pero se respeta la
+  indicación de no crear commits ni hacer push. GitHub Pages no quedó
+  publicado/verificado (la consulta previa devolvió 404); la URL pública de
+  v2.0 queda pendiente de publicar desde GitHub y comprobarla.

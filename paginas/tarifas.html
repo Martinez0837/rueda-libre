@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarifas y recorridos | Rueda Libre</title>
+    <title>Tarifas y recorridos | Rueda Libre v2.0</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="pagina-tarifas pb-5">
@@ -26,9 +27,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
           <ul class="navbar-nav gap-lg-2">
-            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifas.html">Tarifas y rutas</a></li>
-            <li class="nav-item"><a class="nav-link" href="reserva.html">Reservas</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house-door-fill" aria-hidden="true"></i>Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifas.html"><i class="bi bi-tag-fill" aria-hidden="true"></i>Tarifas y rutas</a></li>
+            <li class="nav-item"><a class="nav-link" href="reserva.html"><i class="bi bi-calendar-check-fill" aria-hidden="true"></i>Reservas</a></li>
           </ul>
         </div>
       </div>
@@ -136,7 +137,7 @@
         </aside>
       </section>
       <p class="accion-reserva text-center my-3">
-          <a class="btn btn-success btn-lg" href="reserva.html">Reservar ahora</a>
+          <a class="btn btn-primary btn-lg" href="reserva.html">Reservar ahora</a>
       </p>
         <section class="categoria-bicicletas p-3 p-md-5 my-4">
           <h2 class="mb-3">Bicicletas urbanas</h2>
@@ -184,23 +185,23 @@
         </section>
     </main>
     <p class="container text-center my-3">
-    <a class="btn btn-outline-success btn-sm" href="../index.html">Volver al inicio</a>
+    <a class="btn btn-outline-primary btn-sm" href="../index.html">Volver al inicio</a>
     </p>
 
-  <footer class="pie-contacto container my-4 d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
+  <footer class="pie-contacto pie-v2 container my-4 d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
   <dl class="mb-0">
-    <dt>Contacto</dt>
-    <dd class="mt-2 mb-0">¿Dudas? Escríbenos a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</dd>
+    <dt><i class="bi bi-person-lines-fill" aria-hidden="true"></i>Contacto</dt>
+    <dd class="mt-2 mb-0">¿Dudas? Escríbenos a <a href="mailto:hola@ruedalibre.example"><i class="bi bi-envelope-fill" aria-hidden="true"></i>hola@ruedalibre.example</a>.</dd>
   </dl>
   <p class="text-end">&copy; 2026 Rueda Libre. Todos los derechos reservados. Riwi.</p>
   <dl class="horario-footer mb-0">
-    <dt id="titulo-horario-atencion">Horario de atención</dt>
+    <dt id="titulo-horario-atencion"><i class="bi bi-clock-fill" aria-hidden="true"></i>Horario de atención</dt>
     <dd class="mt-2 mb-0">De lunes a viernes, de 7:00 a. m. a 5:00 p. m.</dd>
   </dl>
 </footer>
 
-    <a class="btn btn-success btn-sm whatsapp-fijo d-table mx-auto my-3 d-md-none" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    <a class="btn btn-success btn-sm whatsapp-fijo d-none d-md-table position-fixed end-0 bottom-0 m-3" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="btn btn-primary btn-sm whatsapp-fijo d-table mx-auto my-3 d-md-none" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+    <a class="btn btn-primary btn-sm whatsapp-fijo d-none d-md-table position-fixed end-0 bottom-0 m-3" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
