@@ -423,3 +423,29 @@ Beneficios con utilidades Bootstrap 5.3 (2026-11-02)
      `d-none`, lo mantiene oculto en pantallas menores.
 - No se añadió CSS propio, atributo `style` ni clases de proyecto. El enlace
   usa utilidades de color, espaciado y tipografía en lugar del componente botón.
+
+Integración de Bootstrap en Inicio (2026-11-02)
+- Inicio carga Bootstrap 5.3.8 antes de `css/styles.css` y el bundle JS antes
+  de cerrar `body`. La portada, presentación, flota, galería de tres rutas,
+  beneficios, servicios adicionales y pasos de alquiler usan grilla y
+  utilidades Bootstrap; se conservaron los siete modelos y los colores y
+  fuentes de marca. Se quitaron las reglas de distribución de Inicio ya
+  reemplazadas; las distribuciones pendientes de Tarifas y Reservas están
+  señaladas con comentarios en `css/styles.css`.
+- Conflictos revisados en los estilos computados del navegador y solución:
+  1. El margen definido por `.contenido-card h2` competía con `mb-*` de
+     Bootstrap. Se quitó ese margen propio y se asignaron `mb-3`/`mb-4` a los
+     encabezados. El inspector computa 16 px para el margen de la flota.
+  2. `.contenido-inicio a` aplicaba un color de enlace más específico que las
+     utilidades contextuales de Bootstrap. Se eliminó esa regla general; el
+     enlace de ubicación conserva el verde mediante `.ubicacion-card a` y los
+     CTA mantienen el estilo de marca de `.boton-reservar`.
+  3. `.encabezado-pagina h1` define un tamaño de marca más específico que el
+     encabezado base de Bootstrap. Se conserva intencionalmente esa escala
+     adaptable y Montserrat, sin añadir una utilidad de tamaño que compita;
+     el estilo computado confirma Montserrat.
+- Viewports comprobados: a 360 px el hero, la flota, las rutas y beneficios
+  usan 1 columna; a 768 px, 2 / 2 / 3 / 2; a 1280 px, 2 / 4 / 3 / 4. No hubo
+  desbordamiento horizontal, cargaron las 15 imágenes y los enlaces Reservar
+  quedaron alineados dentro de cada fila de la flota. El relleno computado de
+  `.card-body` es 16 px y CSS propio va después de Bootstrap.
