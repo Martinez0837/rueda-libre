@@ -134,46 +134,6 @@ body {
     font-weight: 600;
   }
 
-  input:not([type="radio"]):not([type="checkbox"]),
-  select,
-  textarea {
-    width: 100%;
-    min-height: 3.125rem;
-    padding: var(--espaciado-sm) var(--espaciado-md);
-    border: 1px solid var(--borde-suave);
-    border-radius: var(--espaciado-sm);
-    outline: none;
-    background: var(--crema);
-    color: inherit;
-    font: inherit;
-    transition: border-color 160ms ease, box-shadow 160ms ease;
-  }
-
-  input:not([type="radio"]):not([type="checkbox"]):hover,
-  select:hover,
-  textarea:hover {
-    border-color: var(--gris-asfalto);
-  }
-
-  .opcion-reserva input[type="radio"]:hover,
-  .opcion-reserva input[type="checkbox"]:hover {
-    outline: 2px solid var(--gris-asfalto);
-    outline-offset: 2px;
-  }
-
-  .opcion-reserva input[type="radio"],
-  .opcion-reserva input[type="checkbox"] {
-    width: auto;
-    min-height: 0;
-    margin: 0;
-    accent-color: var(--verde-ruta);
-  }
-
-  textarea {
-    min-height: 6.875rem;
-    resize: vertical;
-  }
-
   input:not([type="radio"]):not([type="checkbox"]):focus,
   select:focus,
   textarea:focus {
@@ -181,31 +141,6 @@ body {
     box-shadow: 0 0 0 4px var(--sombra-color);
     outline: 3px solid var(--azul-noche);
     outline-offset: 3px;
-  }
-
-  .formulario-reserva button:focus-visible {
-    outline: 3px solid var(--azul-noche);
-    outline-offset: 3px;
-  }
-
-/* Controles y botones */
-button {
-    min-height: 3.25rem;
-    padding: var(--espaciado-md) var(--espaciado-lg);
-    border: 0;
-    border-radius: var(--espaciado-sm);
-    background: var(--verde-ruta);
-    color: var(--blanco);
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 160ms ease, background 160ms ease;
-  }
-
-  button:hover {
-    background: var(--azul-noche);
-    transform: translateY(-1px);
-
   }
 
   .nota {
@@ -276,8 +211,7 @@ button {
   a:focus,
   button:focus,
   input:not([type="radio"]):not([type="checkbox"]):focus,
-  .opcion-reserva input[type="radio"]:focus,
-  .opcion-reserva input[type="checkbox"]:focus,
+  .form-check-input:focus,
   select:focus,
   textarea:focus {
     outline: 3px solid var(--azul-noche);
