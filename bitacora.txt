@@ -403,3 +403,23 @@ Comparación de la flota con Bootstrap 5.3 (2026-11-02)
   imágenes y las siete tarjetas, sin hoja de estilos propia. Se verificaron
   viewports de navegador; no se hizo una sesión manual con Device Mode de
   DevTools.
+
+Beneficios con utilidades Bootstrap 5.3 (2026-11-02)
+- Se añadió «¿Por qué Rueda Libre?» con cuatro beneficios en una grilla y una
+  franja «¿Listo para rodar?» debajo de la flota, en
+  `pruebas/catalogo-bootstrap.html`. La franja apila texto y enlace en móvil,
+  pasa a fila desde `md` y oculta la imagen decorativa en móvil.
+- Se consultaron las páginas oficiales de [Grid](https://getbootstrap.com/docs/5.3/layout/grid/),
+  [Spacing](https://getbootstrap.com/docs/5.3/utilities/spacing/),
+  [Colors](https://getbootstrap.com/docs/5.3/utilities/colors/),
+  [Flex](https://getbootstrap.com/docs/5.3/utilities/flex/) y
+  [Display](https://getbootstrap.com/docs/5.3/utilities/display/).
+- Cinco clases consultadas y su función:
+  1. `col-lg-3`: desde `lg`, reserva tres de las doce columnas de la grilla.
+  2. `p-md-5`: aplica relleno nivel 5 desde el breakpoint `md`.
+  3. `text-bg-success`: combina fondo verde de éxito con color de texto legible.
+  4. `flex-md-row`: desde `md`, coloca los elementos flex en una fila.
+  5. `d-md-block`: muestra el elemento como bloque desde `md`; combinado con
+     `d-none`, lo mantiene oculto en pantallas menores.
+- No se añadió CSS propio, atributo `style` ni clases de proyecto. El enlace
+  usa utilidades de color, espaciado y tipografía en lugar del componente botón.
