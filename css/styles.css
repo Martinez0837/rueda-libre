@@ -839,9 +839,9 @@ button {
   }
 
 .pie-contacto dl dd a{
-  text-decoration: none
-  font-weight: bold;
-  color: var(--blanco);
+  text-decoration: none;
+  font-weight:bold;
+  color:var(--blanco);
   }
 
 .pie-contacto .horario-footer {

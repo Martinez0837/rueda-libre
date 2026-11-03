@@ -383,3 +383,23 @@ Diseño responsive mobile-first (2026-11-02)
 - Publicación de GitHub Pages v1.5 pendiente: este clon no tiene remoto Git
   configurado. No se inventó ni publicó una URL; la comprobación en un celular
   real también queda pendiente.
+
+Comparación de la flota con Bootstrap 5.3 (2026-11-02)
+- Tiempo de implementación y comprobación: aproximadamente 1 minuto.
+- La cuadrícula propia en `css/styles.css` ocupa 5 líneas (3 declaraciones:
+  `display: grid`, `grid-template-columns` y `gap`). En la página de prueba no
+  se agregó CSS propio de distribución: se usaron 7 clases Bootstrap distintas
+  para el contenedor, la fila, gutters y columnas (`container`, `row`, `g-3`,
+  `col-12`, `col-sm-6`, `col-lg-4`, `col-xl-3`).
+- Bootstrap resolvió sin escribir reglas los breakpoints, los gutters y la
+  altura uniforme de las tarjetas; `d-flex`, `flex-column` y `mt-auto` dejan
+  “Reservar” al final. El catálogo pasó de una columna a 390 px, dos a 768 px,
+  tres a 1024 px y cuatro a 1280 px.
+- Se gana rapidez y comportamiento responsive predefinido, pero se pierde
+  control fino sobre breakpoints, separación y presentación, que quedan
+  condicionados por las clases y variables del framework; además, la prueba
+  depende de cargar Bootstrap desde CDN.
+- Comprobación local: cargaron Bootstrap CSS y bundle JS 5.3.8, las siete
+  imágenes y las siete tarjetas, sin hoja de estilos propia. Se verificaron
+  viewports de navegador; no se hizo una sesión manual con Device Mode de
+  DevTools.
