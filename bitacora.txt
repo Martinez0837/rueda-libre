@@ -449,3 +449,43 @@ Integración de Bootstrap en Inicio (2026-11-02)
   desbordamiento horizontal, cargaron las 15 imágenes y los enlaces Reservar
   quedaron alineados dentro de cada fila de la flota. El relleno computado de
   `.card-body` es 16 px y CSS propio va después de Bootstrap.
+
+Migración de Tarifas y Reservas a Bootstrap 5.3 (2026-11-03)
+- Tarifas y Reservas cargan Bootstrap 5.3.8 antes de `css/styles.css` y el
+  bundle JS al final del documento. Las tablas de tarifas y la información
+  complementaria quedan en columnas 8/4 desde `lg`; la galería usa 1/2/3
+  columnas en móvil, `sm` y `lg`. Reservas usa columnas 8/4 desde `md`, y
+  Documento/Celular comparte una fila desde `sm`.
+- Se eliminaron de `css/styles.css` las reglas propias de distribución de las
+  páginas: Grid/Flexbox, anchos de contenedor y breakpoints estructurales. La
+  hoja conserva variables, tipografía, colores de marca, tarjetas, tablas,
+  controles y estados. Las reglas responsive restantes ajustan la presentación
+  de imágenes y tablas, no el layout de las secciones.
+- Conteo de líneas comprobado con `wc -l` y el historial local: 1.141 líneas
+  en la rama v1.5 (`ebedd21`) frente a 725 actuales; son 416
+  líneas menos (36,5 %). Las reglas de tabla y los estilos visuales de las
+  tarjetas se mantienen.
+- Verificación en navegador a 360, 768 y 1280 px: ninguna de las tres páginas
+  presenta scroll horizontal. Inicio distribuye portada/flota/rutas/beneficios
+  en 1/1/1/1, 2/2/3/2 y 2/4/3/4 columnas respectivamente. En Tarifas, tablas
+  e información complementaria se apilan hasta `lg` y pasan a 8/4 a 1280 px;
+  las tablas no desbordan su contenedor. Reservas se apila en móvil y mide
+  480/240 px a 768 y 760/380 px a 1280 para formulario/contacto (proporción
+  2:1). Bootstrap cargó en las tres páginas y las 15 imágenes de Inicio
+  cargaron.
+- Se probó la validación nativa: el formulario vacío es inválido, un conjunto
+  válido de datos pasa `checkValidity()`, un documento no numérico se rechaza
+  por `pattern` y una cantidad de 7 se rechaza por `max`. No se modificaron
+  los atributos de validación.
+- Tiempo: no se llevó un cronómetro para la migración completa v1.5 ni para
+  esta migración, así que no hay dos duraciones comparables. La anotación
+  anterior de «aproximadamente 1 minuto» corresponde solo a la prueba del
+  catálogo Bootstrap y era aproximada, no al trabajo completo. No se inventa
+  una cifra retrospectiva. Conclusión: Bootstrap reduce en 36,5 % el CSS de
+  esta hoja y resuelve las grillas responsive con utilidades; sin tiempos
+  medidos no se puede afirmar cuánto ahorró en horas. A cambio, el sitio
+  depende de la versión y disponibilidad del CDN y requiere revisar la
+  cascada entre Bootstrap y los estilos de marca.
+- Publicación de v2.0-beta pendiente: este clon no tiene un remoto Git
+  configurado. No se publicó ni se inventó una URL de GitHub Pages; tampoco se
+  pudo verificar en un celular físico desde este entorno.

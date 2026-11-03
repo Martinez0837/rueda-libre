@@ -21,24 +21,10 @@
 }
 
 /* Base y box model */
-main {
-  width: min(100% - 2rem, 72rem);
-  max-width: 72rem;
-  margin-inline: auto;
-}
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 h1,
@@ -84,38 +70,12 @@ body {
   }
 
 /* Formulario de reservas */
-  .fondo {
-    margin: 0;
-    min-height: 100vh;
-    padding: var(--espaciado-sm);
-    background-color: var(--crema);
-  }
-
   .isla {
-    width: 100%;
-    min-width: 0;
-    padding: var(--espaciado-md);
     border: 1px solid var(--crema);
     border-radius: 1.75rem;
     background: var(--crema);
     box-shadow: 0 24px 70px var(--sombra-color);
     backdrop-filter: blur(12px);
-  }
-
-  /* Distribución propia pendiente de migrar a Bootstrap en Reservas. */
-  .reserva-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: stretch;
-    gap: var(--espaciado-md);
-  }
-
-  /* Información de contacto y campos cortos en Reservas. */
-  .contacto-reserva dl {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--espaciado-xs) var(--espaciado-md);
-    margin-top: var(--espaciado-lg);
   }
 
   .contacto-reserva dd {
@@ -129,18 +89,6 @@ body {
     text-underline-offset: 3px;
   }
 
-  /* Fila de campos en Reservas. */
-  .fila-campos {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .fila-campos .campo {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
   h1 {
     margin: 0;
     font-size: clamp(1.7rem, 5vw, 2rem);
@@ -148,18 +96,11 @@ body {
   }
 
   .intro {
-    margin: var(--espaciado-sm) 0 var(--espaciado-lg);
     color: var(--gris-asfalto);
     line-height: 1.55;
   }
 
-    .campo {
-    margin-bottom: var(--espaciado-md);
-  }
-
   .ayuda-campo {
-    display: block;
-    margin-top: var(--espaciado-xs);
     color: var(--gris-asfalto);
     font-size: 0.8rem;
     line-height: 1.4;
@@ -167,45 +108,28 @@ body {
 
   .grupo-reserva {
     min-width: 0;
-    margin: 0 0 var(--espaciado-lg);
     padding: 0;
     border: 0;
   }
 
   .grupo-reserva legend {
-    margin-bottom: var(--espaciado-sm);
     font-weight: 600;
   }
 
   .formulario-reserva h2 {
-    margin: 0 0 var(--espaciado-lg);
     text-align: center;
   }
 
   .etiqueta-campo {
-    display: block;
-    margin-bottom: var(--espaciado-xs);
     font-size: 0.9rem;
     font-weight: 600;
   }
 
-  .opciones-reserva {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaciado-sm) var(--espaciado-lg);
-  }
-
   .opcion-reserva {
-    display: flex;
-    align-items: center;
-    gap: var(--espaciado-xs);
-    margin-bottom: 0;
     font-weight: 400;
   }
 
   label {
-    display: block;
-    margin-bottom: var(--espaciado-xs);
     font-size: 0.9rem;
     font-weight: 600;
   }
@@ -266,9 +190,7 @@ body {
 
 /* Controles y botones */
 button {
-    width: 100%;
     min-height: 3.25rem;
-    margin-top: var(--espaciado-xs);
     padding: var(--espaciado-md) var(--espaciado-lg);
     border: 0;
     border-radius: var(--espaciado-sm);
@@ -287,7 +209,6 @@ button {
   }
 
   .nota {
-    margin: var(--espaciado-md) 0 0;
     color: var(--gris-asfalto);
     font-size: 0.78rem;
     line-height: 1.5;
@@ -296,32 +217,13 @@ button {
 
 /* Navegación compartida */
 
-  #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: var(--espaciado-sm);
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
   nav {
-    margin: var(--espaciado-sm) clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
     padding: var(--espaciado-sm) clamp(var(--espaciado-md), 3vw, var(--espaciado-lg));
     border: 1px solid var(--crema);
     border-radius: var(--espaciado-lg);
     background-color: var(--crema);
     box-shadow: 0 12px 32px var(--sombra-color);
     backdrop-filter: blur(12px);
-  }
-
-  #navbar .marca,
-  #navbar .navbar-links {
-    display: flex;
-    align-items: center;
-    gap: var(--espaciado-xs);
   }
 
   #navbar .marca {
@@ -331,35 +233,21 @@ button {
   }
 
   #navbar .navbar-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--espaciado-xs);
     text-align: center;
-    list-style: none;
-    padding: 0;
-  }
-
-  #navbar .navbar-links li {
-    display: inline-block;
-    vertical-align: middle;
   }
 
   #navbar .nombre-marca {
-    margin: 0;
     font-weight: 600;
     font-size: clamp(1.4rem, 3.5vw, 2rem);
   }
 
   #navbar .logo {
-    flex: 0 0 auto;
     width: 75px;
     height: 68px;
     object-fit: contain;
   }
 
   #navbar .navbar-links a {
-    display: inline-block;
     padding: 10px 14px;
     border: 1px solid var(--verde-ruta);
     border-radius: 8px;
@@ -425,9 +313,6 @@ button {
   }
 
   .encabezado-pagina {
-    width: min(100% - 2rem, 72rem);
-    max-width: 72rem;
-    margin: var(--espaciado-lg) auto;
     padding: var(--espaciado-lg);
     border: 1px solid var(--crema);
     border-radius: var(--espaciado-lg);
@@ -438,8 +323,6 @@ button {
   }
 
   .bienvenida {
-    min-height: 15vh;
-    margin-bottom: var(--espaciado-md);
     font-size: clamp(1.3rem, 3vw, 1.8rem);
     font-weight: 600;
   }
@@ -457,14 +340,7 @@ button {
     font-size: clamp(1.25rem, 3.5vw, 2rem);
   }
 
-  .encabezado-reserva {
-    width: 100%;
-    margin: 0 0 var(--espaciado-lg);
-  }
-
   .bienvenida p {
-    display: block;
-    margin-top: var(--espaciado-xs);
     color: var(--azul-noche);
     font-size: 1rem;
     font-weight: 400;
@@ -501,7 +377,6 @@ button {
   }
 
   .flota .bicicleta-precio {
-    margin-bottom: var(--espaciado-md);
     color: var(--azul-noche);
     font-size: 1.2rem;
     font-weight: 600;
@@ -539,7 +414,6 @@ button {
   #about-us > p,
   .ubicacion-card > p {
     max-width: 48rem;
-    margin: 0 auto;
     color: var(--gris-asfalto);
     line-height: 1.75;
     text-align: center;
@@ -612,7 +486,6 @@ button {
   }
 
   .accion-reserva {
-    margin: var(--espaciado-lg) 0;
     text-align: center;
   }
 
@@ -681,25 +554,7 @@ button {
   }
 
 /* Footer compartido y acceso fijo a WhatsApp */
-  body:not(.fondo) {
-    padding-bottom: var(--espaciado-sm);
-  }
-
-  .fondo.pagina-reserva {
-    display: block;
-    padding-bottom: var(--espaciado-sm);
-  }
-
   .pie-contacto {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: var(--espaciado-md);
-    width: min(100% - 2rem, 72rem);
-    margin: var(--espaciado-xl) auto var(--espaciado-md);
     padding: var(--espaciado-lg);
     border: 1px solid var(--borde-suave);
     border-radius: var(--espaciado-md);
@@ -718,19 +573,7 @@ button {
   text-align: left;
 }
 
-  .pie-contacto dd {
-    margin-top: var(--espaciado-xs);
-  }
-
-  .pie-contacto p {
-    color: var(--gris-asfalto);
-    text-align: right;
-  }
-
   .whatsapp-fijo {
-    display: block;
-    width: fit-content;
-    margin: var(--espaciado-md) auto;
     padding: var(--espaciado-sm) var(--espaciado-md);
     border: 1px solid var(--verde-ruta);
     border-radius: 999px;
@@ -752,33 +595,6 @@ button {
   }
 
 /* Tarifas, tablas y galerías */
-.pagina-tarifas {
-  padding: 0 clamp(var(--espaciado-md), 4vw, var(--espaciado-xl));
-}
-
-.pagina-tarifas main {
-  width: min(100%, 72rem);
-  max-width: 72rem;
-  margin-inline: auto;
-}
-
-.pagina-tarifas > p:first-of-type {
-  text-align: center;
-}
-
-.pagina-tarifas > p:first-of-type img {
-  margin-inline: auto;
-}
-
-/* Distribución propia que todavía usa Tarifas. */
-.tarifas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
-  align-items: start;
-  gap: var(--espaciado-md);
-  margin: var(--espaciado-lg) 0;
-}
-
 .tarifa-card {
   min-width: 0;
   padding: var(--espaciado-sm);
@@ -789,8 +605,7 @@ button {
 }
 
 .tarifa-card h2 {
-  margin: 0 0 var(--espaciado-md);
-  text-align: center;
+text-align: center;
 }
 
 .tarifa-card table {
@@ -827,9 +642,6 @@ button {
 
 .categoria-bicicletas {
   position: relative;
-  width: 100%;
-  max-width: 68rem;
-  margin: var(--espaciado-lg) auto;
   padding: var(--espaciado-md);
   border: 1px solid var(--borde-suave);
   border-radius: var(--espaciado-md);
@@ -852,7 +664,6 @@ button {
 }
 
 .categoria-bicicletas h2 {
-  margin: 0 0 var(--espaciado-md);
   text-align: center;
 }
 
@@ -862,20 +673,9 @@ button {
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Distribución propia que todavía usa Tarifas: galería de bicicletas. */
-.galeria-bicicletas {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  width: 100%;
-  gap: var(--espaciado-md);
-  padding: var(--espaciado-xs) var(--espaciado-xs) var(--espaciado-sm);
-  list-style: none;
-}
-
 .bicicleta-card {
   min-width: 0;
   overflow: hidden;
-  margin: 0;
   border-radius: var(--espaciado-sm);
   background-color: var(--crema);
   box-shadow: 0 4px 16px var(--sombra-color);
@@ -889,7 +689,6 @@ button {
 }
 
 .aviso-recorridos {
-  margin: var(--espaciado-md) 0 var(--espaciado-lg);
   padding: var(--espaciado-sm) var(--espaciado-md);
   border: 1px solid var(--borde-suave);
   border-radius: var(--espaciado-sm);
@@ -899,87 +698,18 @@ button {
   text-align: center;
 }
 
-/* Lista de contenido de Tarifas. */
-.aviso-recorridos ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--espaciado-xs) var(--espaciado-lg);
-  margin-top: var(--espaciado-xs);
-  padding-left: var(--espaciado-md);
-  text-align: left;
-}
-
 .boton-inicio:active {
   transform: translateY(0);
 }
 
 @media (min-width: 768px) {
-  body:not(.fondo) {
-    padding-bottom: 5rem;
-  }
-
-  .fondo.pagina-reserva {
-    padding-bottom: 5rem;
-  }
-
-  #navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #navbar .navbar-links {
-    justify-content: flex-end;
-    text-align: right;
-  }
-
   .bienvenida-imagen {
     height: clamp(16rem, 30vw, 24rem);
   }
 
-  .galeria-bicicletas {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  /* Distribución propia pendiente de migrar a Bootstrap en Reservas. */
-  .reserva-layout {
-    gap: var(--espaciado-lg);
-  }
-
-  .isla {
-    padding: var(--espaciado-xl);
-  }
-
-  .contacto-reserva dl {
-    grid-template-columns: max-content minmax(0, 1fr);
-  }
-
-  .fila-campos {
-    flex-direction: row;
-    gap: var(--espaciado-md);
-  }
-
-  .pie-contacto {
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-
-  .whatsapp-fijo {
-    position: fixed;
-    right: var(--espaciado-md);
-    bottom: var(--espaciado-md);
-    z-index: 10;
-    margin: 0;
-  }
 }
 
 @media (min-width: 1200px) {
-  /* Distribución propia pendiente de migrar a Bootstrap en Reservas. */
-  .reserva-layout {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  }
-
   .tarifa-card {
     padding: var(--espaciado-md);
   }

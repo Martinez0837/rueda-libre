@@ -7,37 +7,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="pagina-tarifas">
-  <nav aria-label="Navegación principal">
-      <div id="navbar">
-        <a class="marca" href="../index.html" aria-label="Rueda Libre, inicio">
+<body class="pagina-tarifas pb-5">
+  <nav class="container my-2" aria-label="Navegación principal">
+      <div id="navbar" class="d-flex flex-column align-items-center justify-content-center gap-2 w-100 flex-md-row justify-content-md-between">
+        <a class="marca d-flex align-items-center gap-2" href="../index.html" aria-label="Rueda Libre, inicio">
           <img src="../img/logo.jpg" alt="" class="logo">
-          <p class="nombre-marca">Rueda Libre.</p>
+          <p class="nombre-marca mb-0">Rueda Libre.</p>
         </a>
-        <ul id="menu" class="navbar-links">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a class="activo" aria-current="page" href="tarifas.html">Tarifas y rutas</a></li>
-          <li><a href="reserva.html">Reservas</a></li>
+        <ul id="menu" class="navbar-links d-flex flex-wrap justify-content-center justify-content-md-end gap-2 list-unstyled p-0">
+          <li><a class="d-inline-block" href="../index.html">Inicio</a></li>
+          <li><a class="d-inline-block activo" aria-current="page" href="tarifas.html">Tarifas y rutas</a></li>
+          <li><a class="d-inline-block" href="reserva.html">Reservas</a></li>
         </ul>
       </div>
     </nav>
 
-    <header class="encabezado-pagina encabezado-tarifas">
+    <header class="container encabezado-pagina encabezado-tarifas my-3">
       <h1>Tarifas y recorridos de Rueda Libre</h1>
     </header>
 
-    <p>
-      <img src="../img/bicicletas.jpg" alt="Logo rojo con forma de etiqueta que muestra una bicicleta y el texto Bike Rental" width="250">
+    <p class="container text-center my-3">
+      <img class="mx-auto" src="../img/bicicletas.jpg" alt="Varias bicicletas disponibles para alquiler" width="250">
     </p>
 
-    <main>
-      <section class="tarifas-grid" aria-label="Tablas de tarifas y recorridos">
-      <section id="tarifas" class="tarifa-card">
-      <h2>Tarifas de alquiler</h2>
+    <main class="container">
+      <section class="row g-4 my-3" aria-label="Tablas de tarifas y recorridos">
+        <div class="col-12 col-lg-8">
+          <div class="row g-4">
+      <section id="tarifas" class="tarifa-card col-12">
+      <h2 class="mb-3">Tarifas de alquiler</h2>
 
-      <table>
+      <table class="table table-bordered">
         <caption>Tarifas de alquiler de bicicletas por tiempo de uso</caption>
         <thead> 
         <tr>
@@ -71,9 +78,9 @@
       </table>
       </section>
 
-      <section id="recorridos" class="tarifa-card">
-      <h2>Recorridos guiados</h2>
-      <table>
+      <section id="recorridos" class="tarifa-card col-12">
+      <h2 class="mb-3">Recorridos guiados</h2>
+      <table class="table table-bordered">
         <caption>Recorridos guiados con duración, dificultad y precio</caption>
         <thead>
           <tr>
@@ -109,84 +116,90 @@
             </tbody>
         </table>
         </section>
-        </section>
-        <aside class="aviso-recorridos" aria-labelledby="informacion-complementaria">
+          </div>
+        </div>
+        <aside class="aviso-recorridos col-12 col-lg-4" aria-labelledby="informacion-complementaria">
           <h2 id="informacion-complementaria">Información complementaria</h2>
           <p>Las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
           <h3>Qué llevar</h3>
-          <ul>
+          <ul class="d-flex flex-wrap justify-content-center gap-2 mt-2 list-unstyled ps-0">
             <li>Ropa cómoda</li>
             <li>Agua</li>
             <li>Protector solar</li>
             <li>Documento de identidad</li>
           </ul>
         </aside>
-        <p class="accion-reserva">
+      </section>
+      <p class="accion-reserva text-center my-3">
           <a class="boton-reservar" href="reserva.html">Reservar ahora</a>
-        </p>
-        <section class="categoria-bicicletas">
-          <h2>Bicicletas urbanas</h2>
+      </p>
+        <section class="categoria-bicicletas p-3 p-md-5 my-4">
+          <h2 class="mb-3">Bicicletas urbanas</h2>
 
-
-          <ul class="galeria-bicicletas">
-            <li class="bicicleta-card">
+          <ul class="galeria-bicicletas row g-3 list-unstyled">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta urbana.jpg" alt="Bicicleta urbana para alquiler">
             </li>
-            <li class="bicicleta-card">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta urbana2.jpg" alt="Bicicleta urbana alternativa para alquiler">
             </li>
-            <li class="bicicleta-card">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta urbana3.jpg" alt="Tercera bicicleta urbana para alquiler">
             </li>
           </ul>
         </section>
-        <section class="categoria-bicicletas">
-          <h2>Bicicletas de montaña</h2>
-          <ul class="galeria-bicicletas">
-            <li class="bicicleta-card">
+        <section class="categoria-bicicletas p-3 p-md-5 my-4">
+          <h2 class="mb-3">Bicicletas de montaña</h2>
+          <ul class="galeria-bicicletas row g-3 list-unstyled">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta montaña.jpg" alt="Bicicleta de montaña para alquiler">
             </li>
-            <li class="bicicleta-card">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta de montaña2.jpg" alt="Otra bicicleta de montaña para alquiler">
             </li>
-            <li class="bicicleta-card">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta montaña3.jpg" alt="Tercera bicicleta de montaña para alquiler">
             </li>
           </ul>
         </section>
-        <section class="categoria-bicicletas categoria-electrica">
+        <section class="categoria-bicicletas categoria-electrica p-3 p-md-5 my-4">
           <p class="etiqueta-nuevo">Nuevo</p>
-          <h2>Bicicletas eléctricas</h2>
-          <ul class="galeria-bicicletas">
-            <li class="bicicleta-card">
+          <h2 class="mb-3">Bicicletas eléctricas</h2>
+          <ul class="galeria-bicicletas row g-3 list-unstyled">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta electrica.jpg" alt="Bicicleta eléctrica para alquiler">
             </li>
-            <li class="bicicleta-card">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta electrica2.jpg" alt="Otra bicicleta eléctrica para alquiler">
             </li>
-            <li class="bicicleta-card">
+            <li class="bicicleta-card col-12 col-sm-6 col-lg-4">
               <img src="../img/bicicleta electrica3.jpg" alt="Tercera bicicleta eléctrica para alquiler">
             </li>
           </ul>
         </section>
     </main>
-    <p>
+    <p class="container text-center my-3">
     <a class="boton-inicio" href="../index.html">Volver al inicio</a>
     </p>
 
-  <footer class="pie-contacto">
-  <dl>
+  <footer class="pie-contacto container my-4 d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3">
+  <dl class="mb-0">
     <dt>Contacto</dt>
-    <dd>¿Dudas? Escríbenos a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</dd>
+    <dd class="mt-2 mb-0">¿Dudas? Escríbenos a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</dd>
   </dl>
-  <p>&copy; 2026 Rueda Libre. Todos los derechos reservados. Riwi.</p>
-  <dl class="horario-footer">
+  <p class="text-end">&copy; 2026 Rueda Libre. Todos los derechos reservados. Riwi.</p>
+  <dl class="horario-footer mb-0">
     <dt id="titulo-horario-atencion">Horario de atención</dt>
-    <dd>De lunes a viernes, de 7:00 a. m. a 5:00 p. m.</dd>
+    <dd class="mt-2 mb-0">De lunes a viernes, de 7:00 a. m. a 5:00 p. m.</dd>
   </dl>
 </footer>
 
-    <a class="whatsapp-fijo" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="whatsapp-fijo d-table mx-auto my-3 d-md-none" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="whatsapp-fijo d-none d-md-table position-fixed end-0 bottom-0 m-3" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 </html>
