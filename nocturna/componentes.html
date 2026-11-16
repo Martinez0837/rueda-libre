@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kit de componentes | Rueda Nocturna</title>
+    <link rel="stylesheet" href="output.css">
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <main class="mx-auto max-w-5xl space-y-12 p-6 sm:p-8">
+      <header class="space-y-4">
+        <p class="text-sm font-bold uppercase tracking-widest text-amber-400">Rueda Libre · Rueda Nocturna</p>
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Kit de componentes</h1>
+        <p class="max-w-2xl text-lg leading-relaxed text-slate-300">
+          Botones, cards, alertas y campos con una escala visual común, listos para la landing.
+        </p>
+      </header>
+
+      <section class="space-y-6" aria-labelledby="titulo-reglas">
+        <div class="space-y-3">
+          <h2 id="titulo-reglas" class="text-2xl font-bold">Reglas del kit</h2>
+          <p class="text-slate-300">Radios <code class="font-semibold text-slate-100">rounded-2xl</code>; espaciado en escala de 4 (<code class="font-semibold text-slate-100">gap-4</code>, <code class="font-semibold text-slate-100">p-6</code>, <code class="font-semibold text-slate-100">space-y-6</code>); fondo slate-950/900, texto slate-100/300 y borde slate-700. El ámbar identifica la acción principal; cielo, verde y ámbar distinguen información, éxito y advertencia, siempre con título y texto.</p>
+        </div>
+      </section>
+
+      <section class="space-y-6" aria-labelledby="titulo-botones">
+        <div class="space-y-3">
+          <h2 id="titulo-botones" class="text-2xl font-bold">Botones</h2>
+          <p class="text-slate-300">Tres variantes con foco visible para teclado y respuesta al pasar el puntero.</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a class="rounded-2xl bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition hover:bg-amber-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" href="../paginas/reserva.html">Inscríbete</a>
+          <a class="rounded-2xl bg-slate-800 px-6 py-3 font-bold text-slate-100 shadow transition hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" href="../paginas/tarifas.html#recorridos">Ver las rutas</a>
+          <a class="rounded-2xl border border-amber-400 px-6 py-3 font-bold text-amber-300 transition hover:bg-amber-400 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" href="../paginas/tarifas.html#tarifas">Consultar tarifas</a>
+        </div>
+      </section>
+
+      <section class="space-y-6" aria-labelledby="titulo-card">
+        <div class="space-y-3">
+          <h2 id="titulo-card" class="text-2xl font-bold">Card de ruta</h2>
+          <p class="text-slate-300">Luces del Centro · MiniReto 3</p>
+        </div>
+        <article class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+          <img class="h-56 w-full object-cover" src="../img/ruta.jpg" alt="Ruta urbana de Medellín al anochecer">
+          <div class="space-y-6 p-6">
+            <span class="inline-block rounded-2xl bg-emerald-400/15 px-4 py-2 text-sm font-bold text-emerald-300">Nivel fácil</span>
+            <h3 class="text-2xl font-bold">Luces del Centro</h3>
+            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div class="space-y-1"><dt class="text-sm text-slate-400">Distancia</dt><dd class="text-lg font-semibold">10 km</dd></div>
+              <div class="space-y-1"><dt class="text-sm text-slate-400">Duración</dt><dd class="text-lg font-semibold">2 h</dd></div>
+              <div class="space-y-1"><dt class="text-sm text-slate-400">Punto de encuentro</dt><dd class="text-lg font-semibold">Sede de Rueda Libre</dd></div>
+            </dl>
+            <div class="flex flex-wrap items-center justify-between gap-4 border-t border-slate-700 pt-5">
+              <p class="text-sm text-slate-300">Precio por persona <span class="mt-1 block text-3xl font-bold text-amber-300">$55.000</span></p>
+              <a class="rounded-2xl bg-amber-400 px-6 py-3 font-bold text-slate-950 shadow-lg transition hover:bg-amber-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" href="../paginas/reserva.html">Reservar ruta</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="space-y-6" aria-labelledby="titulo-alertas">
+        <div class="space-y-3">
+          <h2 id="titulo-alertas" class="text-2xl font-bold">Alertas</h2>
+          <p class="text-slate-300">Cada mensaje combina un color, un título y una explicación.</p>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-2xl border border-slate-700 border-l-4 border-l-sky-400 bg-sky-400/10 p-6">
+            <h3 class="font-bold text-sky-300">Información</h3>
+            <p class="mt-2 text-slate-200">Llega 15 minutos antes de la salida para ajustar tu bicicleta y recibir el equipo.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-700 border-l-4 border-l-emerald-400 bg-emerald-400/10 p-6" role="status">
+            <h3 class="font-bold text-emerald-300">Inscripción confirmada</h3>
+            <p class="mt-2 text-slate-200">Tu lugar está reservado. Te enviaremos los detalles de la ruta a tu correo.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-700 border-l-4 border-l-amber-400 bg-amber-400/10 p-6">
+            <h3 class="font-bold text-amber-300">Advertencia</h3>
+            <p class="mt-2 text-slate-200">La ruta Luna en Las Palmas es exigente y requiere experiencia previa en bicicleta.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6" aria-labelledby="titulo-campos">
+        <div class="space-y-3">
+          <h2 id="titulo-campos" class="text-2xl font-bold">Campos de formulario</h2>
+          <p class="text-slate-300">Las etiquetas permanecen visibles y cada campo muestra ayuda y foco.</p>
+        </div>
+        <form class="max-w-2xl space-y-6" action="#" method="get">
+          <div class="space-y-2">
+            <label class="block font-semibold" for="correo">Correo electrónico</label>
+            <input class="w-full rounded-2xl border border-slate-600 bg-slate-900 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-400/20" id="correo" name="correo" type="email" placeholder="nombre@ejemplo.com" aria-describedby="ayuda-correo">
+            <p class="text-sm text-slate-400" id="ayuda-correo">Usaremos este correo para enviarte la confirmación de la reserva.</p>
+          </div>
+          <div class="space-y-2">
+            <label class="block font-semibold" for="celular">Celular</label>
+            <input class="w-full rounded-2xl border border-slate-600 bg-slate-900 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-400/20" id="celular" name="celular" type="tel" placeholder="300 123 4567" aria-describedby="ayuda-celular">
+            <p class="text-sm text-slate-400" id="ayuda-celular">Incluye el número con el que podamos contactarte durante la actividad.</p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
