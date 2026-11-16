@@ -521,3 +521,15 @@ Cierre de semana: Rueda Libre v2.0 (2026-11-03)
   indicación de no crear commits ni hacer push. GitHub Pages no quedó
   publicado/verificado (la consulta previa devolvió 404); la URL pública de
   v2.0 queda pendiente de publicar desde GitHub y comprobarla.
+
+Prototipo de la portada Rueda Nocturna con Tailwind (2026-11-16)
+- Se creó `nocturna/prototipo.html` como una portada independiente con el Play
+  CDN de Tailwind, una sola etiqueta `<h1>`, la campaña, el subtítulo, los dos
+  datos destacados y el enlace «Inscríbete» hacia Reservas.
+- En la semana 2, el botón de Inicio se construyó con el componente Bootstrap
+  `btn btn-primary btn-lg`: sus clases predefinidas aplican el estilo de botón.
+  Hoy, el enlace se presenta como botón con utilidades Tailwind como
+  `inline-block`, `bg-amber-400`, `px-6`, `py-3`, `text-lg` y `font-bold`.
+- Diferencia clave: Bootstrap ofrece componentes listos con estilos y
+  comportamiento predeterminados; Tailwind es utility-first y permite componer
+  la presentación aplicando utilidades directamente al marcado.
