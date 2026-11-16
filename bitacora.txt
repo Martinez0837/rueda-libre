@@ -522,6 +522,21 @@ Cierre de semana: Rueda Libre v2.0 (2026-11-03)
   publicado/verificado (la consulta previa devolvió 404); la URL pública de
   v2.0 queda pendiente de publicar desde GitHub y comprobarla.
 
+Verificación posterior de publicación de Rueda Libre v2.0 (2026-11-03)
+- La versión quedó publicada en https://martinez0837.github.io/rueda-libre/.
+  Se comprobó que Inicio, Tarifas, Reservas, `css/styles.css` y las capturas
+  responden HTTP 200. La consulta previa a la API de Pages devolvía 404, pero
+  la URL pública actualmente sirve el sitio y se verificó en navegador.
+- En producción se confirmaron las tres promociones, Bootstrap/Bootstrap
+  Icons, estilos, fuentes calculadas, un bundle por página y ausencia de
+  estilos en línea. El menú se probó a 360 px por teclado; formulario vacío
+  mostró los 10 mensajes de corrección y el modal presentó las cinco políticas
+  y cerró con Escape. No se detectaron solicitudes fallidas ni desbordamiento
+  horizontal en 360, 768 y 1280 px.
+- La validación fue una comprobación en navegador con viewports; no equivale a
+  una prueba en dispositivo móvil físico ni a una auditoría automatizada de
+  todos los estados visuales.
+
 Prototipo de la portada Rueda Nocturna con Tailwind (2026-11-16)
 - Se creó `nocturna/prototipo.html` como una portada independiente con el Play
   CDN de Tailwind, una sola etiqueta `<h1>`, la campaña, el subtítulo, los dos
