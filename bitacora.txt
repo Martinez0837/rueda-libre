@@ -548,3 +548,21 @@ Prototipo de la portada Rueda Nocturna con Tailwind (2026-11-16)
 - Diferencia clave: Bootstrap ofrece componentes listos con estilos y
   comportamiento predeterminados; Tailwind es utility-first y permite componer
   la presentación aplicando utilidades directamente al marcado.
+
+Tailwind CLI y variantes de botones en Rueda Nocturna (2026-11-16)
+- En `nocturna/` se instalaron como dependencias de desarrollo Tailwind CSS y
+  su CLI (v4.3.5), usando Node.js v22.22.1 y npm 11.21.2 vía Corepack.
+  `src/input.css` importa Tailwind y `index.html` carga `src/output.css`;
+  `node_modules/` queda excluido por `.gitignore`.
+- La CLI generó `src/output.css` desde `nocturna/`. Se ejecutó con
+  `--watch=always`, que mantiene la observación activa cuando la terminal no
+  proporciona stdin; el CSS generado se incluye en el repositorio para que la
+  página funcione sin ejecutar la CLI en GitHub Pages.
+- En `output.css` aparece la utilidad usada `bg-amber-400`, pero no
+  `bg-pink-500`, que no se usa en el HTML. Tailwind analiza las clases presentes
+  en los archivos fuente y genera las utilidades detectadas; por eso una clase
+  no usada no se incluye en el CSS.
+- Se añadieron tres variantes de enlace-botón con estados `hover` y
+  `focus-visible`, anillo visible (`ring-*`), bordes redondeados y sombras.
+  En navegador, el teclado Tab recorrió los tres enlaces y cada uno mostró su
+  anillo de foco; al pasar el puntero, el fondo de los tres cambió.
