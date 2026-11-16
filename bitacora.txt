@@ -548,3 +548,10 @@ Prototipo de la portada Rueda Nocturna con Tailwind (2026-11-16)
 - Diferencia clave: Bootstrap ofrece componentes listos con estilos y
   comportamiento predeterminados; Tailwind es utility-first y permite componer
   la presentación aplicando utilidades directamente al marcado.
+
+
+Kit de componentes para Rueda Nocturna (2026-11-16)
+- Se creó `nocturna/componentes.html` con las tres variantes de botón, la card «Luces del Centro» del MiniReto 3, alertas informativa/de éxito/de advertencia y campos etiquetados de correo y celular.
+- Reglas del kit: `rounded-2xl` para radios; espaciado en escala de 4 con `gap-4`, `p-6` y `space-y-6`; superficies slate-950/900, texto slate-100/300 y bordes slate-700. Ámbar para la acción principal, cielo para información, verde para éxito y ámbar para advertencia; color siempre acompañado de texto.
+- Los enlaces tienen estados `hover:` y foco de teclado `focus-visible:`; los inputs muestran foco con `focus:`. Cada campo tiene etiqueta `for`, ayuda asociada y ejemplo. La alerta de éxito usa `role="status"` para anunciarse.
+- La página publicada carga `nocturna/output.css`, generado con Tailwind CLI para incluir las utilidades usadas en el HTML.
